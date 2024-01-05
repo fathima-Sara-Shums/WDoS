@@ -4,9 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
 </head>
-<body>
+
+<body class="bg-white text-green-700 font-sans">
+  <header class="bg-yellow-900">
+    <nav class="flex items-center justify-between px-4 sm:px-8 lg:px-12 h-16 sm:h-20 lg:h-22 lg:gap-8">
+        <img src="/images/wildlife sl.png" class="object-contain h-12 sm:h-16 lg:h-20" alt="Wildlife SriLanka">
+        <div class="dropdown-menu absolute -top-full left-0 w-full flex flex-col gap-6 items-center py-2 font-bold max-lg:bg-yellow-900 lg:static lg:flex-row lg:justify-between">
+            <ul class="flex flex-col items-center lg:flex-row lg:gap-8">
+                <li class="hover:text-green-500 text-white"><a href="/"> HOME</a></li>
+                <li class="hover:text-green-500 text-white"><a href="/about-us.html">ABOUT US</a></li>
+                <li class="hover:text-green-500 text-white whitespace-nowrap"><a href="wildlife-department.html">WILDLIFE DEPARTMENT</a></li>
+                <li class="hover:text-green-500 text-white whitespace-nowrap"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
+                <li class="hover:text-green-500 text-white whitespace-nowrap"><a href="srilankan-leopard.html">SRI LANKAN LEOPARD</a></li>
+                <li class="hover:text-green-500 text-white whitespace-nowrap"><a href="the-animals.html">THE ANIMALS</a></li>
+                <li class="hover:text-green-500 text-white whitespace-nowrap"><a href="contact-us.html">CONTACT US</a></li>
+            </ul>
+        </div>
+        <div class="toggle-button lg:hidden">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+</header>
+    
+  
+
+  <!-- Main Content Section -->
+  <div class="container mx-auto mt-8">
+    <div class="prose text-green-700">
+      <!-- Introduction Section -->
+      <h2 class="text-2xl font-semibold">About Indigenous Animals in Sri Lanka</h2>
+      <p>
+        Sri Lanka is home to a diverse range of indigenous animals, showcasing the country's rich biodiversity.
+        Explore the unique wildlife that inhabits this beautiful island nation.
+      </p>
+
+      <!-- Links to National Parks -->
+      <h2 class="text-2xl font-semibold mt-4">Explore National Parks</h2>
+      <p>
+        Discover the wonders of Sri Lanka's wildlife by visiting two prominent national parks:
+        <ul class="list-disc ml-6">
+          <li><a href="yala.html" class="text-green-700">Yala National Park</a></li>
+          <li><a href="wilpattu.html" class="text-green-700">Wilpattu National Park</a></li>
+        </ul>
+      </p>
+    </div>
+  </div>
+
+
     
 </body>
 </html>
