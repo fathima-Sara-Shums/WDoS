@@ -17,27 +17,52 @@
 
     
         <!-- Header Section -->
-        <header class="bg-yellow-900">
-          
-            <nav class="flex items-center justify-between px-12 h-22 lg:gap-8">
-              
-              <img src="/images/wildlife sl.png" alt="Wildlife SriLanka" class="w-64">
-              <div class="dropdown-menu absolute -top-full left-0 w-full flex flex-col gap-6 items-center py-2 font-bold max-lg:bg-yellow-900 lg:static lg:flex-row lg:justify-between">
-                <ul class="flex flex-col items-center lg:flex-row lg:gap-8">
-                  <li class="hover:text-green-500"><a href="/"> HOME</a></li>
-                  <li class="hover:text-green-500"><a href="/About us.html">ABOUT US</a></li>
-                  <li class="hover:text-green-500 whitespace-nowrap"><a href="wildlife-department.html">Wildlife department</a></li>
-                  <li class="hover:text-green-500 whitespace-nowrap"><a href="wildlife-srilanka.html">Wildlife SriLanka</a></li>
-                  <li class="hover:text-green-500 whitespace-nowrap"><a href="srilankan-leopard.html">Srilankan Leopard</a></li>
-                  <li class="hover:text-green-500 whitespace-nowrap"><a href="the-animals.html">The Animals</a></li>
-                  <li class="hover:text-green-500 whitespace-nowrap"><a href="contact-us.html">Contact us</a></li>
+        <header class="bg-green-900" x-data="{ open: false }">
+          <nav class="flex items-center justify-between px-4 lg:px-12 py-2 lg:py-4 bg-green-800">
+            <!-- Logo -->
+            <img src="/images/logo-no-background.png" alt="Wildlife SriLanka" class="w-64">
+            
+            <!-- Responsive Navigation -->
+            <div x-data="{ open: false }" class="lg:hidden">
+                <!-- Toggle Button for Mobile -->
+                <div @click="open = !open" class="cursor-pointer text-white">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                
+                <!-- Mobile Menu -->
+                <div x-show="open" @click.away="open = false" class="absolute top-0 left-0 w-full bg-green-800 py-4">
+                    <ul class="flex flex-col items-center">
+                        <li class="text-white hover:text-yellow-200 py-2"><a href="/">HOME</a></li>
+                        
+                        <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
+                        <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
+                        <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
+                        <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
+                        <li class="text-white hover:text-yellow-200 py-2"><a href="Contact us.html">CONTACT US</a></li>
+                    </ul>
+                </div>
+            </div>
+        
+            <!-- Desktop Navigation -->
+            <div class="hidden lg:flex flex-col lg:flex-row lg:items-center">
+                <ul class="flex flex-col lg:flex-row lg:gap-8">
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="/">HOME</a></li>
+                        
+                        <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
+                        <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
+                        <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
+                        <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
+                        <li class="text-white hover:text-yellow-200 py-2"><a href="Contact us.html">CONTACT US</a></li>
+                    
                 </ul>
-              </div>
-              <div class="toggle-button lg:hidden">
-                <i class="fa-solid fa-bars"></i>
-              </div>
-            </nav>
-          </header>
+            </div>
+        </nav>
+        
+            
+          
+        </header>
+        
+         
     
         <!-- Main Content Section -->
         <main class="container mx-auto py-8">
