@@ -6,65 +6,113 @@
     <title>yala</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/css/stylesheet.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
     
     <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 <body>
  
     <!-- Header Section -->
-    <header class="bg-yellow-900">
-          
-        <nav class="flex items-center justify-between px-12 h-22 lg:gap-8">
-          
-          <img src="/images/wildlife sl.png" alt="Wildlife SriLanka" class="w-64">
-          <div class="dropdown-menu absolute -top-full left-0 w-full flex flex-col gap-6 items-center py-2 font-bold max-lg:bg-yellow-900 lg:static lg:flex-row lg:justify-between">
-            <ul class="flex flex-col items-center lg:flex-row lg:gap-8">
-              <li class="hover:text-green-500"><a href="/"> HOME</a></li>
-              <li class="hover:text-green-500"><a href="/About us.html">ABOUT US</a></li>
-              <li class="hover:text-green-500 whitespace-nowrap"><a href="wildlife-department.html">Wildlife department</a></li>
-              <li class="hover:text-green-500 whitespace-nowrap"><a href="wildlife-srilanka.html">Wildlife SriLanka</a></li>
-              <li class="hover:text-green-500 whitespace-nowrap"><a href="srilankan-leopard.html">Srilankan Leopard</a></li>
-              <li class="hover:text-green-500 whitespace-nowrap"><a href="the-animals.html">The Animals</a></li>
-              <li class="hover:text-green-500 whitespace-nowrap"><a href="contact-us.html">Contact us</a></li>
+    <header class="bg-green-900" x-data="{ open: false }">
+      <nav class="flex items-center justify-between px-4 lg:px-12 py-2 lg:py-4 bg-green-800">
+        <!-- Logo -->
+        <img src="/images/logo-no-background.png" alt="Wildlife SriLanka" class="w-64">
+        
+        <!-- Responsive Navigation -->
+        <div x-data="{ open: false }" class="lg:hidden">
+            <!-- Toggle Button for Mobile -->
+            <div @click="open = !open" class="cursor-pointer text-white">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div x-show="open" @click.away="open = false" class="absolute top-0 left-0 w-full bg-green-800 py-4">
+                <ul class="flex flex-col items-center">
+                    <li class="text-white hover:text-yellow-200 py-2"><a href="/">HOME</a></li>
+                    
+                    <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
+                    <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
+                    <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
+                    <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
+                    <li class="text-white hover:text-yellow-200 py-2"><a href="Contact us.html">CONTACT US</a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex flex-col lg:flex-row lg:items-center">
+            <ul class="flex flex-col lg:flex-row lg:gap-8">
+              <li class="text-white hover:text-yellow-200 py-2"><a href="/">HOME</a></li>
+                    
+                    <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
+                    <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
+                    <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
+                    <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
+                    <li class="text-white hover:text-yellow-200 py-2"><a href="Contact us.html">CONTACT US</a></li>
+                
             </ul>
-          </div>
-          <div class="toggle-button lg:hidden">
-            <i class="fa-solid fa-bars"></i>
-          </div>
-        </nav>
-      </header>
+        </div>
+    </nav>
+    
+        
+      
+    </header>
+    
    
 
     <!-- Main Content Section -->
     <main class="container mx-auto py-8">
-
-        <!-- Main Image -->
-        <img src="main-image.jpg" alt="Yala National Park" class="w-full h-64 object-cover mb-4">
-
-        <!-- About Section -->
-        <section id="about" class="mb-8">
-            <h2 class="text-2xl font-bold mb-4">About Yala National Park</h2>
-            <p class="text-gray-800">Yala National Park is the most visited and second-largest national park in Sri Lanka. It is renowned for its diverse ecosystems and wildlife, including leopards, elephants, and a variety of bird species.</p>
-        </section>
-
-        <!-- Wildlife Section -->
-        <section id="wildlife" class="mb-8">
-            <h2 class="text-2xl font-bold mb-4">Wildlife at Yala</h2>
-            <p class="text-gray-800">The park is home to a rich array of wildlife, making it a popular destination for safari enthusiasts and nature lovers. Visitors can witness the majestic elephants, elusive leopards, and numerous bird species.</p>
-        </section>
-
-        <!-- Gallery Section -->
-        <section id="gallery">
-            <h2 class="text-2xl font-bold mb-4">Gallery</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <!-- Image 1 -->
-                <img src="image1.jpg" alt="Yala Gallery 1" class="w-full h-48 object-cover mb-2">
-                <!-- Image 2 -->
-                <img src="image2.jpg" alt="Yala Gallery 2" class="w-full h-48 object-cover mb-2">
-                <!-- Add more images as needed -->
+      <!-- Main Image -->
+      <img src="/images/yala-deer.jpeg" alt="Yala National Park" class="w-full h-64 object-cover mb-4">
+    
+      <!-- About Section -->
+      <section id="about" class="mb-8">
+          <h2 class="text-2xl font-bold mb-4">Yala National Park</h2>
+          <div class="grid grid-cols-2">
+            <div>
+              <p class="text-green-700">Yala National Park is the .</p>
+              <ul class="text-green-500">
+                <li>Location:</li>
+                <li>Best time to visit</li>
+                <li>other tips:</li>
+              </ul>
             </div>
-        </section>
+            <div>
+              <!--iframe locaton-->
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.2390598342618!2d81.4235964740457!3d6.491384923537665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae683b969aec5c7%3A0x7e3aa2da875d927e!2sYala%20National%20Park%20Sri%20Lanka!5e0!3m2!1sen!2slk!4v1705477185395!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+         
+            </div>
+          </div>
+          
+      </section>
+
+    
+      
+
+      <!-- Gallery Section -->
+      <section id="gallery">
+          <h2 class="text-green-700 font-bold mb-4">Animals there:</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <!-- image1 -->
+              <img src="images/yala-deer.jpeg" alt="yala 1 " class="w-full h-48 object-cover mb-2">
+              <!-- Image 2 -->
+              <img src="images/yala-leopard.jpg" alt="yala 2" class="w-full h-48 object-cover mb-2">
+              
+          </div>
+          <div>
+            <ul>
+              <li>30 species of mammals</li>
+              <li>birds</li>
+            </ul>
+          </div>
+      </section>
+
+
+
+    
 
     </main>
 
