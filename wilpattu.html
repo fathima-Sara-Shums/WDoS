@@ -68,14 +68,31 @@
         <main class="container mx-auto py-8">
     
             <!-- Main Image -->
-            <img src="/images/wilpattu-monkey.jpg" alt="Wilpattu National Park" class="w-full h-64 object-cover mb-4">
+            
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                      <img src="images/wilpattu-monkey.jpg" alt="Yala National Park" class="w-full h-64 object-cover">
+                  </div>
+                  <div class="swiper-slide">
+                      <img src="images/wilpattu-bird.jpeg" alt="Leopard in Yala National Park" class="w-full h-64 object-cover">
+                  </div>
+                  <!-- Add more slides as needed -->
+              </div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+          </div>
     
             <!-- About Section -->
             <section id="about" class="mb-8">
                 <h2 class="text-2xl font-bold mb-4">Wilpattu National Park</h2>
                 <div class="grid grid-cols-2">
                   <div>
-                    <p class="text-green-700">Wilpattu National Park is the largest national park in Sri Lanka, known for its diverse ecosystems and unique wildlife. It offers a serene and immersive experience in the heart of nature.</p>
+                    <p class="text-green-700">Nestled in the northwestern part of Sri Lanka, Wilpattu(විල්පත්තු/வில்பத்து) National Park stands as a testament to the country's rich biodiversity and pristine natural beauty. This expansive sanctuary, spanning over 1,317 square kilometers, is the largest national park in Sri Lanka, known for its untamed landscapes and diverse ecosystems.
+
+                      Wilpattu, derived from the Sinhalese words "Willu" (meaning natural lakes) and "Pattu" (meaning ten), refers to the numerous natural lakes scattered throughout the park. These water bodies play a vital role in sustaining the park's diverse flora and fauna, creating a unique environment that attracts wildlife enthusiasts and conservationists alike.
+                      
+                      Established in 1938, Wilpattu holds the distinction of being one of the oldest national parks in Sri Lanka. Its rich history and cultural significance add layers of intrigue to the lush wilderness it protects. The park's landscape is characterized by dense scrublands, open grassy plains, and pristine villus (natural lakes), creating a mosaic of habitats that harbor a wide array of wildlife.</p>
                     <ul class="text-green-500">
                       <li>Location:</li>
                       <li>Best time to visit</li>
@@ -89,6 +106,47 @@
                 </div>
                 
             </section>
+            <ul class="list-disc ml-6 space-y-4">
+              <ul class="list-disc list-inside  space-y-4 bg-yellow-100">
+                <h3 class="font-mono text-green-800">USEFUL TIPS</h3>
+                <div class="grid md:grid-cols-2 ">
+                  <div>
+                    <li class="font-bold">Advance Safari Booking:</li>
+              
+      
+                    <li class="font-bold">Visit During Dry Season:</li>
+              
+      
+                    <li class="font-bold">Respect Wildlife Etiquette:</li>
+              
+      
+                    <li class="font-bold">Comply with Park Regulations:</li>
+              
+      
+                    <li class="font-bold">Neutral-Colored Clothing:</li>
+
+                  </div>
+                  <div>
+                    <li class="font-bold">Carry Essentials:</li>
+              
+              
+                    <li class="font-bold">Early Morning Safaris:</li>
+             
+      
+                    <li class="font-bold">Engage with Knowledgeable Guides:</li>
+              
+      
+                    <li class="font-bold">Stay Patient and Silent:</li>
+
+                  </div>
+                </div>
+
+              
+              
+      
+              
+              
+          </ul>
     
           
             
@@ -120,6 +178,16 @@
             dropdown.classList.toggle('top-16');
           })
         </script>    
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+        </script>
+        
     
         
 

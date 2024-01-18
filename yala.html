@@ -64,17 +64,36 @@
    
 
     <!-- Main Content Section -->
-    <main class="container mx-auto py-8">
-      <!-- Main Image -->
-      <img src="/images/yala-deer.jpeg" alt="Yala National Park" class="w-full h-64 object-cover mb-4">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+          <div class="swiper-slide">
+              <img src="images/yala-deer.jpeg" alt="Yala National Park" class="w-full h-64 object-cover">
+          </div>
+          <div class="swiper-slide">
+              <img src="images/yala-suduwelimulla.webp" alt="Leopard in Yala National Park" class="w-full h-64 object-cover">
+          </div>
+          <!-- Add more slides as needed -->
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+  </div>
+    
+      
+      
     
       <!-- About Section -->
-      <section id="about" class="mb-8">
-          <h2 class="text-2xl font-bold mb-4">Yala National Park</h2>
+      <section id="about" class="mb-8 bg-yellow-100">
+          <h2 class="text-2xl font-bold mb-4 text-green-900">Yala National Park</h2>
           <div class="grid grid-cols-2">
             <div>
-              <p class="text-green-700">Yala National Park is the .</p>
-              <ul class="text-green-500">
+              <p class=""> Yala (යාල/யாலா தேசிய பூங்கா) National Park is a mesmerizing haven for wildlife enthusiasts, situated in the southeastern region of Sri Lanka, bordering the Indian Ocean. Covering an expansive 979 square kilometers, Yala is the most visited and second-largest national park in the country.
+
+                The park comprises five distinct blocks, with three open to the public. Notable among these are Palatupana (Block 1), Kumana National Park, also known as 'Yala East,' and Lunugamvehera National Park. Its strategic location, approximately 300 kilometers from Colombo, makes it easily accessible for nature lovers.
+        
+                Designated as a wildlife sanctuary in 1900, alongside Wilpattu, Yala has been a pioneer in wildlife conservation in Sri Lanka. Renowned for its incredible biodiversity, the park is a crucial habitat for Sri Lankan elephants, Sri Lankan leopards, and a plethora of aquatic bird species.
+        
+                Explore the diverse landscapes within Yala National Park, from lush forests to arid plains, and witness the coexistence of a wide array of flora and fauna. The park's significance extends beyond its scenic beauty, as it plays a pivotal role in the conservation of endangered species and the preservation of Sri Lanka's rich natural heritage..</p>
+              <ul class="">
                 <li>Location:It's located along Sri Lanka's southern coast, overlapping Uva and the Southern Province, with Tissamaharama as the nearest town.</li>
                 <li>Best time to visit:March and April is considered the best months to visit the park.</li>
                 <li>open time:6:00 am to 6:00 pm</li>
@@ -89,6 +108,52 @@
           </div>
           
       </section>
+      <section>
+        <ul class="list-disc list-inside  space-y-4 bg-yellow-100">
+          <h3 class="font-mono text-green-800">USEFUL TIPS</h3>
+          <div class="grid md:grid-cols-2 ">
+            
+            <div>
+              <li class="font-bold">Book Safaris in Advance:</li>
+            
+              <li class="font-bold">Visit During the Dry Season:</li>
+            
+              <li class="font-bold">Choose the Right Safari Duration:</li>
+            
+    
+              <li class="font-bold">Respect Wildlife and Their Habitat:</li>
+              
+    
+              <li class="font-bold">Follow Park Regulations:</li>
+            </div>
+  
+            
+            <div>
+              <li class="font-bold">Wear Appropriate Clothing:</li>
+            
+    
+              <li class="font-bold">Stay Hydrated and Carry Snacks:</li>
+            
+    
+              <li class="font-bold">Pack Binoculars and a Camera:</li>
+            
+    
+              <li class="font-bold">Arrive Early for Better Wildlife Sightings:</li>
+            
+    
+              <li class="font-bold">Engage with Knowledgeable Guides:</li>
+  
+            </div>
+
+          </div>
+          
+  
+          
+          
+      </ul>
+      
+      </section>
+
 
     
       
@@ -125,6 +190,22 @@
         dropdown.classList.toggle('top-16');
       })
     </script>
+    <!-- Swiper JS -->
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>
+
+
+  
+  
+
+    
 
     
 
