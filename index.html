@@ -6,265 +6,288 @@
     <title>HomePage</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/WDoS/css/styles.css" />
+    
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 <body>
-      <header class="bg-green-900" x-data="{ open: false }">
-        <nav class="flex items-center justify-between px-4 lg:px-12 py-2 lg:py-4 bg-green-800">
-          <!-- Logo -->
-          <img src="/WDoS/images/logo-no-background.png" alt="Wildlife SriLanka" class="w-64">
-          
-          <!-- Responsive Navigation -->
-          <div x-data="{ open: false }" class="lg:hidden">
-              <!-- Toggle Button for Mobile -->
-              <div @click="open = !open" class="cursor-pointer text-white">
-                  <i class="fa-solid fa-bars"></i>
-              </div>
-              
-              <!-- Mobile Menu -->
-              <div x-show="open" @click.away="open = false" class="absolute top-0 left-0 w-full bg-green-800 py-4">
-                  <ul class="flex flex-col items-center">
-                      <li class="text-white hover:text-yellow-200 py-2"><a href="/">HOME</a></li>
-                      
-                      <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
-                      <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
-                      <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
-                      <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
-                      
-                  </ul>
-              </div>
-          </div>
-      
-          <!-- Desktop Navigation -->
-          <div class="hidden lg:flex flex-col lg:flex-row lg:items-center">
-              <ul class="flex flex-col lg:flex-row lg:gap-8">
-                <li class="text-white hover:text-yellow-200 py-2"><a href="/">HOME</a></li>
-                      
-                      <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
-                      <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
-                      <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
-                      <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
-                      
-                  
-              </ul>
-          </div>
-      </nav>
-      
-          
-        
-      </header>
-      
-
-
-      
-
-
     
-    <!--main image and welcome section-->
-    <div class="container mx-auto">
-        <div class="grid lg:grid-cols-2 gap-6 my-8">
-            <div>
-                <img src="/WDoS/images/bird.jpg" alt="Srilankan bird">
-            </div>
-            <div class="relative ">
-                
-                <h2 class="text-4xl font-bold font-mono text-green-800 mt-2">
-                    Let the adventure begin
-                </h2>
-                <p class=" leading-7 font-mono  mt-2">
-                    Unleash your inner explorer! Witness majestic Asian elephants roam verdant plains, leopards stalk through emerald jungles, and playful dolphins frolic in turquoise waters. From graceful spotted deer to soaring eagles, every turn reveals a new wonder.Come,experience the wild of Sri Lanka!
-                    
-                    
-                </p>
-                
-                
-                
-            </div>
-        </div>
-    </div>
-
-    <!--section to include image reel of popular sites/animals-->
-    <p class="text-green-800 text-3xl font-bold font-mono">Popular:</p>
-
-    <div class="grid  grid-cols-1 mb-4 md:grid-cols-3  ">
-        
-        <div>
-            <img src="/WDoS/images/yala-suduwelimulla.webp" class="w-full h-64 object-cover mb-2 " alt="leopard">
-            <a href="srilankan-leopard.html">Leopards</a>
-            <p class="italic">Sri Lanka's stealthy royalty: Spot the elusive leopard, king of the island's jungles.
-            </p>
-            
-
-         </div>
-        <div>
-            <img src="/WDoS/images/wilpattu-national-park.jpeg" class="w-full h-64 object-cover mb-2" alt="wilpattu">
-            <a href="wilpattu.html">wilpattu</a>
-            <p class="italic">Trade cityscapes for safariscapes in Wilpattu National Park.</p>
-
-        </div>
-        <div>
-            <img src="/WDoS/images/yala-animal.jpg" class="w-full h-64 object-cover mb-2" alt="yala">
-            <a href="yala.html" class="text-green-800">Yala</a>
-            <p class="italic">Dive into the heart of Sri Lanka's wildlife wonderland - Yala</p>
-
-        </div>
-
-    </div>
-    
-    
-    
-    
-    <!--why trust us section-->
-    <div class="container mx-auto">
-        <div class="grid lg:grid-cols-2 gap-6 my-8">
-            
-            <div class="relative">
-                <h4 class="text-sm text-green-500 ">Why trust us</h4>
-                <h2 class="text-2xl text-green-700 font-bold  mt-2">
-                    Department of Wildlife Sri Lanka
-                </h2>
-                <p class="text-sm leading-7 mt-2">
-                    The Department of Wildlife Conservation has been entrusted with the responsibility of
-                    preserving
-                    eco system endowed with various plants and animal species which has inherited the country
-                    with
-                    enormous bio-diversity. The main function of the Department of Wildlife Conservation
-                    established
-                    in 1949 is the conservation of wildlife resources in Sri Lanka.
-                </p>
-                <span class=" text-sm pt-3 block hover:bg-green-500">
-                    Read More
-                </span>
-                <a href="/wildlife-department.html" class="absolute inset-0"></a>
-            </div>
-            <div>
-                <img src="/WDoS/images/srilankan-elephant.jpeg" class="w-full"alt="Srilankan elephant">
-            </div>
-        </div>
-    </div>
-    <!--Yala-->
-    <div class="container mx-auto">
-        <div class="grid lg:grid-cols-2 gap-6 my-8">
-            <div>
-                <img src="/WDoS/images/peacock.jpeg" class="w-full"alt="Srilankan peacock">
-            </div>
-            
-            <div class="relative">
-                <h4 class="text-sm text-green-500 ">Explore</h4>
-                <h2 class="text-2xl text-green-700 font-bold  mt-2">
-                   Yala
-                </h2>
-                <p class="text-sm leading-7 mt-2">
-                    Without question Sri Lanka's most popular national park, Yala is situated about 260 km southeast of Colombo. Officially designated as a national park on 1st March 1938, Yala spans an impressive 978.807 km2. It's located along Sri Lanka's southern coast, overlapping Uva and the Southern Province, with Tissamaharama as the nearest town.
-                    
-                </p>
-
-                <span class=" text-sm pt-3 block hover:bg-green-500">
-                    Read More
-                </span>
-                <a href="/yala.html" class="absolute inset-0"></a>
-            </div>
-            
-        </div>
-    </div>
-    <!--wilpattu-->
-    <div class="grid lg:grid-cols-2 gap-6 my-8">
-            
-        <div class="relative">
-            <h4 class="text-sm text-green-500 ">Pay a visit</h4>
-            <h2 class="text-2xl text-green-700 font-bold  mt-2">
-                Wilpattu
-            </h2>
-            <p class="text-sm leading-7 mt-2">
-                wilpattu has a lot of animals
-                <ul class="list-disc list-inside" >
-                    <li>mammals</li>
-                    <li>birds</li>
-                </ul>
-                
-            </p>
-            <span class=" text-sm pt-3 block ">
-                Read More
-            </span>
-            <a href="/wilpattu.html" class="absolute inset-0"></a>
-        </div>
-        <div>
-            <img src="/WDoS/images/wilpattus.jpg" class="w-full"alt="Srilankan cat">
-        </div>
-    </div>
-     <!--boost and Quick details-->
-
-     
-    <div class=" p-8 text-2xl  bg-green-800 m-5 animate-pulse">
-        <ul class="list-decimal list-inside">
-            <div class="grid grid-cols-3 ">
-                <div class="bg-yellow-100 bg-opacity-60 m-2"><li><p><i class="fa-solid fa-location-dot"></i>:30</p></li></div>
-                <div class="bg-yellow-100 bg-opacity-60 m-2"><li><p><i class="fa-solid fa-paw"></i>:210</p></li></div>
-                
-                <div class="bg-yellow-100 bg-opacity-60   m-2"><li><p><i class="fa-solid fa-person"></i>:20000+</p></li></div>
-            </div>
-        
-            
-            
-            
-        </ul>
-        
-    
-    </div>
-
-
-    
-
-   
-
-    
-
-      <!-- Footer Section -->
-      <footer class="bg-green-800 text-white w-full">
-          <div class="flex flex-col md:flex-row justify-between">
-
+    <div id="_home" x-data="_home">
+        <header class="bg-green-900" x-data="{ open: false }" >
+            <nav class="flex items-center justify-between px-4 lg:px-12 py-2 lg:py-4 bg-green-800">
               <!-- Logo -->
-              <div class="mb-4 md:mb-0 ">
-                  <img src="images/logo-no-background.png" alt="Your Logo" class="w-64 h-auto">
+              <img src="/WDoS/images/logo-no-background.png" alt="Wildlife SriLanka" class="w-64">
+              
+              <!-- Responsive Navigation -->
+              <div x-data="{ open: false }" class="lg:hidden">
+                  <!-- Toggle Button for Mobile -->
+                  <div @click="open = !open" class="cursor-pointer text-white">
+                      <i class="fa-solid fa-bars"></i>
+                  </div>
                   
-                  <p class="mb-2">Phone: <a href="tel:+123456789" class="text-green-300">+1 (234) 567-89</a></p>
+                  <!-- Mobile Menu -->
+                  <div x-show="open" @click.away="open = false" class="absolute top-0 left-0 w-full bg-green-800 py-4">
+                      <ul class="flex flex-col items-center">
+                          <li class="text-white hover:text-yellow-200 py-2"><a href="/">HOME</a></li>
+                          
+                          <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
+                          <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
+                          <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
+                          <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
+                          
+                      </ul>
+                  </div>
               </div>
-              <div class="mt-4 md:mt-0">
-                <h4>Follow us:</h4>
-                <ul>
-                    <li><a href="https://facebook.com/yourpage" target="_blank" ><i class="fa-brands fa-facebook"></i></a></li>
-                    <li><a href="https://www.instagram.com/" target="_blank" ></a><i class="fa-brands fa-instagram"></i></li>
-                    
-                  </ul>
-                
-                
-                
-            </div>
-
-              <!-- Quick Links -->
-              <div class="flex flex-col  space-y-2 md:space-y-0 md:space-x-4">
-                <h4>Quick links:</h4>
-                <ul class="flex flex-col items-center">
+          
+              <!-- Desktop Navigation -->
+              <div class="hidden lg:flex flex-col lg:flex-row lg:items-center">
+                  <ul class="flex flex-col lg:flex-row lg:gap-8">
                     <li class="text-white hover:text-yellow-200 py-2"><a href="/">HOME</a></li>
-                    
-                    <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
-                    <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
-                    <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
-                    <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
-                    
-                </ul>
-                  
+                          
+                          <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
+                          <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
+                          <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
+                          <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
+                          
+                      
+                  </ul>
               </div>
-
+          </nav>
+          
               
-              
+            
+          </header>
+          
+    
+    
+          
+    
+    
+        
+        <!--main image and welcome section-->
+        <section>
+    
+            <div class="container mx-auto">
+                <div class="grid lg:grid-cols-2 gap-6 my-8">
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.home.block_one.image)" alt="Srilankan bird">
+                    </div>
+                    <div class="relative ">
+                        
+                        <h2 x-text="$store.home.block_one.title" class ="text-4xl font-bold font-mono text-green-800 mt-2">
+                            
+                        </h2>
+                        <p  x-text="$store.home.block_one.body" class=" leading-7 font-mono  mt-2">
+                           
+                        </p>
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+    
+        </section>
+        
+    
+        <!--section to include image reel of popular sites/animals-->
+        <section>
+            <p class="text-green-800 text-3xl font-bold font-mono">Popular:</p>
+    
+        <div class="grid  grid-cols-1 mb-4 md:grid-cols-3  ">
+            
+            <div>
+                <img x-bind:src="$store.common.imageSrc($store.home.summary_view.imageone)"class="w-full h-64 object-cover mb-2" alt="leopard"> 
+                <a x-bind:href="$store.summary_view.titleone"></a>
+                <p x-text="$store.home.summary_view.sloganone" class="italic">
+                </p>
+                
+    
+             </div>
+             <div>
+                <img x-bind:src="$store.common.imageSrc($store.home.summary_view.imagetwo)"class="w-full h-64 object-cover mb-2" alt="wilpattu"> 
+                <a x-bind:href="$store.summary_view.titletwo"></a>
+                <p x-text="$store.home.summary_view.slogantwo" class="italic">
+                </p>
+                
+    
+             </div>
+             <div>
+                <img x-bind:src="$store.common.imageSrc($store.home.summary_view.imagethree)"class="w-full h-64 object-cover mb-2" alt="yala"> 
+                <a x-bind:href="$store.summary_view.titlethree"></a>
+                <p x-text="$store.home.summary_view.sloganthree" class="italic">
+                </p>
+                
+    
+             </div>
 
-          </div>
-      </footer>
+    
+        </div>
+    
+        </section>
+        
+        
+        
+        
+        
+        <!--why trust us section-->
+        <section>
+            <div class="container mx-auto">
+                <div class="grid lg:grid-cols-2 gap-6 my-8">
+                    
+                    <div class="relative">
+                        <h4 x-text="$store.home.block_two.subtitle" class="text-sm text-green-500 "></h4>
+                        <h2 x-text="$store.home.block_two.title" class="text-2xl text-green-700 font-bold  mt-2">
+                            
+                        </h2>
+                        <p class="text-sm leading-7 mt-2"x-text="$store.home.block_two.body" >
+                            
+                        </p>
+                        <span class=" text-sm pt-3 block hover:bg-green-500">
+                            Read More
+                        </span>
+                        <a x-bind:href="$store.home.block_two.link" class="absolute inset-0"></a>
+                    </div>
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.home.block_two.image)"  class="w-full"alt="Srilankan elephant">
+                    </div>
+                </div>
+            </div>
+    
+        </section>
+        
+        <!--Yala-->
+        <section>
+            <div class="container mx-auto">
+                <div class="grid lg:grid-cols-2 gap-6 my-8">
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.home.block_three.image)" class="w-full"alt="Srilankan peacock">
+                    </div>
+                    
+                    <div class="relative">
+                        <h4 x-text="$store.home.block_three.subtitle" class="text-sm text-green-500 "></h4>
+                        <h2 x-text="$store.home.block_three.title" class="text-2xl text-green-700 font-bold  mt-2">
+                           
+                        </h2>
+                        <p x-text="$store.home.block_three.body" class="text-sm leading-7 mt-2">
+                            
+                            
+                        </p>
+        
+                        <span class=" text-sm pt-3 block hover:bg-green-500">
+                            Read More
+                        </span>
+                        <a x-bind:href="$store.home.block_three.link" class="absolute inset-0"></a>
+                    </div>
+                    
+                </div>
+            </div>
+    
+        </section>
+        
+        <!--wilpattu-->
+        <section>
+            <div class="grid lg:grid-cols-2 gap-6 my-8">
+                
+                <div class="relative">
+                    <h4 x-text="$store.home.block_four.subtitle"class="text-sm text-green-500 "></h4>
+                    <h2 x-text="$store.home.block_four .title" class="text-2xl text-green-700 font-bold  mt-2">
+                     
+                    </h2>
+                    <p x-text="$store.home.block_four.body"class="text-sm leading-7 mt-2">
+                        
+                        <ul class="list-disc list-inside" >
+                            <li>mammals</li>
+                            <li>birds</li>
+                        </ul>
+                        
+                    </p>
+                    <span class=" text-sm pt-3 block ">
+                        Read More
+                    </span>
+                    <a x-bind:href="$store.home.block_four.link"class="absolute inset-0"></a>
+                </div>
+                <div>
+                    <img x-bind:src="$store.common.imageSrc($store.home.block_four.image)" class="w-full"alt="Srilankan cat">
+                </div>
+            </div>
+    
+        </section>
+    
+         <!--boost and Quick details-->
+    
+         
+        <div class=" p-8 text-2xl  bg-green-800 m-5 animate-pulse">
+            <ul class="list-decimal list-inside">
+                <div class="grid grid-cols-3 ">
+                    <div x-text="$store.home.block_five.point_one" class="bg-yellow-100 bg-opacity-60 m-2"><li><p><i class="fa-solid fa-location-dot"></i></p></li></div>
+                    <div x-text="$store.home.block_five.point_two"class="bg-yellow-100 bg-opacity-60 m-2"><li><p><i class="fa-solid fa-paw"></i></p></li></div>
+                    
+                    <div x-text="$store.home.block_five.point_three"class="bg-yellow-100 bg-opacity-60   m-2"><li><p><i class="fa-solid fa-person"></i></p></li></div>
+                </div>
+            
+                
+                
+                
+            </ul>
+            
+        
+        </div>
+    
+    
+        
+    
+       
+    
+        
+    
+          <!-- Footer Section -->
+          <footer class="bg-green-800 text-white w-full">
+              <div class="flex flex-col md:flex-row justify-between">
+    
+                  <!-- Logo -->
+                  <div class="mb-4 md:mb-0 ">
+                      <img src="images/logo-no-background.png" alt="Your Logo" class="w-64 h-auto">
+                      
+                      <p class="mb-2">Phone: <a href="tel:+123456789" class="text-green-300">+1 (234) 567-89</a></p>
+                  </div>
+                  <div class="mt-4 md:mt-0">
+                    <h4>Follow us:</h4>
+                    <ul>
+                        <li><a href="https://facebook.com/yourpage" target="_blank" ><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank" ></a><i class="fa-brands fa-instagram"></i></li>
+                        
+                      </ul>
+                    
+                    
+                    
+                </div>
+    
+                  <!-- Quick Links -->
+                  <div class="flex flex-col  space-y-2 md:space-y-0 md:space-x-4">
+                    <h4>Quick links:</h4>
+                    <ul class="flex flex-col items-center">
+                        <li class="text-white hover:text-yellow-200 py-2"><a href="/">HOME</a></li>
+                        
+                        <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
+                        <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
+                        <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
+                        <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
+                        
+                    </ul>
+                      
+                  </div>
+    
+                  
+                  
+    
+              </div>
+          </footer>
+    
 
+    </div>
+      
   
  
 
@@ -278,6 +301,11 @@
         dropdown.classList.toggle('top-16');
       })
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="/js/store/home.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+
   
 
     
