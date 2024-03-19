@@ -29,7 +29,7 @@
                   <!-- Mobile Menu -->
                   <div x-show="open" @click.away="open = false" class="absolute top-0 left-0 w-full bg-green-800 py-4">
                       <ul class="flex flex-col items-center">
-                          <li class="text-white hover:text-yellow-200 py-2"><a href="/">HOME</a></li>
+                          <li class="text-white hover:text-yellow-200 py-2"><a href="index.html">HOME</a></li>
                           
                           <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
                           <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
@@ -43,12 +43,13 @@
               <!-- Desktop Navigation -->
               <div class="hidden lg:flex flex-col lg:flex-row lg:items-center">
                   <ul class="flex flex-col lg:flex-row lg:gap-8">
-                    <li class="text-white hover:text-yellow-200 py-2"><a href="/">HOME</a></li>
+                    <li class="text-white hover:text-yellow-200 py-2"><a href="index.html">HOME</a></li>
                           
                           <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
                           <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
                           <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
                           <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
+                          
                           
                       
                   </ul>
@@ -58,7 +59,80 @@
               
             
           </header>
+          <div x-data="{ isAdmin: false ,isEditorVisible: false, userRole: localStorage.getItem('userRole') }" x-init="isAdmin = localStorage.getItem('isAdmin') === 'true'">
+            <div x-show="userRole === 'admin'"class="editor-popup">
+                <!-- Content editor interface goes here -->
+            </div>
+            
+            <!-- Trigger button to open content editor popup -->
+            <button x-show="userRole === 'admin'" class="bg-yellow-800" @click="isEditorVisible = !isEditorVisible">
+                Open Editor
+            </button>
+            
+            <!-- Content editor popup -->
+            <div class="bg-green-500" x-show="isEditorVisible">
+                <!--<div>
+                    <ul class="mb-4">
+                        <li><input type="text" x-model="$store.home.block_one.title"></li>
+                        <li><textarea x-model="$store.home.block_one.body"></textarea></li>
+                    </ul>
+
+                </div>
+            -->
+            <!-- Block One -->
+            <div h4="block_one"> 
+            <div class="mb-6">
+                <label class="block text-lg font-bold mb-2" >Title </label>
+                <input x-model="$store.home.block_one.title" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_one_title" type="text" placeholder="Title">
+            </div>
+            <div class="mb-6">
+                <label class="block text-lg font-bold mb-2" >Body</label>
+                <textarea x-model="$store.home.block_one.body"class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_one_body" placeholder="Body"></textarea>
+            </div>
+            <!--summary-->
+            <div class="mb-6">
+                <label class="block text-lg font-bold mb-2">Summary View</label>
+                <!-- Image One -->
+                <div class="mb-4">
+                    <label class="block text-lg font-bold" >Image One</label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="$home.summaryview_imageone" type="text" placeholder="Image URL">
+                </div>
+                <!-- Add similar inputs for Title One, Slogan One, Image Two, Title Two, Slogan Two, Image Three, Title Three, Slogan Three -->
+            </div>
+            <!-- Save button -->
+    <button @click="saveChanges" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save Changes</button>
+    
+
+            </div>
+        </div>
+        
+ 
+
+        
           
+
+          
+         
+
+                
+          
+          
+    
+
+
+          
+                
+            
+          
+           
+           
+              
+              
+
+
+
+         
+
     
     
           
