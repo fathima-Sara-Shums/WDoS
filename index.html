@@ -13,7 +13,9 @@
 </head>
 <body>
     
-    <div id="_home" x-data="_home">
+    <div  id="_home" x-data="{}">
+        >
+
         <header class="bg-green-900" x-data="{ open: false }" >
             <nav class="flex items-center justify-between px-4 lg:px-12 py-2 lg:py-4 bg-green-800">
               <!-- Logo -->
@@ -51,64 +53,65 @@
                           <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
                           
                           
+                          
                       
                   </ul>
+                  
               </div>
           </nav>
           
               
             
           </header>
-          <div x-data="{ isAdmin: false ,isEditorVisible: false, userRole: localStorage.getItem('userRole') }" x-init="isAdmin = localStorage.getItem('isAdmin') === 'true'">
-            <div x-show="userRole === 'admin'"class="editor-popup">
-                <!-- Content editor interface goes here -->
-            </div>
-            
-            <!-- Trigger button to open content editor popup -->
-            <button x-show="userRole === 'admin'" class="bg-yellow-800" @click="isEditorVisible = !isEditorVisible">
-                Open Editor
-            </button>
-            
-            <!-- Content editor popup -->
-            <div class="bg-green-500" x-show="isEditorVisible">
-                <!--<div>
-                    <ul class="mb-4">
-                        <li><input type="text" x-model="$store.home.block_one.title"></li>
-                        <li><textarea x-model="$store.home.block_one.body"></textarea></li>
-                    </ul>
-
+          <div class="container mx-auto">
+            <div x-data="{ isAdmin: false ,isEditorVisible: false, userRole: localStorage.getItem('userRole') }" x-init="isAdmin = localStorage.getItem('isAdmin') === 'true'">
+                <div x-show="userRole === 'admin'" class="editor-popup">
+                    <!-- Content editor interface goes here -->
                 </div>
-            -->
-            <!-- Block One -->
-            <div h4="block_one"> 
-            <div class="mb-6">
-                <label class="block text-lg font-bold mb-2" >Title </label>
-                <input x-model="$store.home.block_one.title" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_one_title" type="text" placeholder="Title">
-            </div>
-            <div class="mb-6">
-                <label class="block text-lg font-bold mb-2" >Body</label>
-                <textarea x-model="$store.home.block_one.body"class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_one_body" placeholder="Body"></textarea>
-            </div>
-            <!--summary-->
-            <div class="mb-6">
-                <label class="block text-lg font-bold mb-2">Summary View</label>
-                <!-- Image One -->
-                <div class="mb-4">
-                    <label class="block text-lg font-bold" >Image One</label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="$home.summaryview_imageone" type="text" placeholder="Image URL">
-                </div>
-                <!-- Add similar inputs for Title One, Slogan One, Image Two, Title Two, Slogan Two, Image Three, Title Three, Slogan Three -->
-            </div>
-            <!-- Save button -->
-    <button @click="saveChanges" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save Changes</button>
-    
+                
+                <!-- Trigger button to open content editor popup -->
+                <button x-show="userRole === 'admin'" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" @click="isEditorVisible = !isEditorVisible">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+                
+                <!-- Content editor popup -->
+                <div class="bg-green-500" x-show="isEditorVisible">
+                    <!--<div>
 
+                    -->
+                    <!-- Block One -->
+                    <div h4="block_one"> 
+                        <div class="mb-6">
+                            <label class="block text-lg font-bold mb-2">Title</label>
+                            <input x-model="$store.home.block_one.title" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_one_title" type="text" placeholder="Title">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-lg font-bold mb-2">Body</label>
+                            <textarea x-model="$store.home.block_one.body" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_one_body" placeholder="Body"></textarea>
+                        </div>
+                        <!-- Summary -->
+                        <div class="mb-6">
+                            <label class="block text-lg font-bold mb-2">Summary View</label>
+                            <!-- Image One -->
+                            <div class="mb-4">
+                                <label class="block text-lg font-bold">Image One</label>
+                                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="home_summaryview_imageone" type="text" placeholder="Image URL">
+                            </div>
+                            <!-- Add similar inputs for Title One, Slogan One, Image Two, Title Two, Slogan Two, Image Three, Title Three, Slogan Three -->
+                        </div>
+                    </div>
+        
+                    <!-- Save button -->
+                    <button @click="saveChanges" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save Changes</button>
+                </div>
             </div>
         </div>
         
- 
 
-        
+
+            
+     
+          
           
 
           
@@ -120,7 +123,7 @@
     
 
 
-          
+
                 
             
           
@@ -141,8 +144,11 @@
         
         <!--main image and welcome section-->
         <section>
+            <div class="container mx-auto"></div>
     
-            <div class="container mx-auto">
+            
+        
+                
                 <div class="grid lg:grid-cols-2 gap-6 my-8">
                     <div>
                         <img x-bind:src="$store.common.imageSrc($store.home.block_one.image)" alt="Srilankan bird">
@@ -377,8 +383,10 @@
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script type="text/javascript" src="/js/store/home.js"></script>
-    <script type="text/javascript" src="/js/app.js"></script>
+    
+
+    <script type="text/javascript" src="js/store/home.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
 
   
 

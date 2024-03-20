@@ -1,6 +1,8 @@
 document.addEventListener('alpine:init', () => {
     Alpine.store('auth', {
-        user : null,    
+        user : null,
+        flag:false,
+        //nameoflogger:"admin"    ,
         users : [
             {
                 username : 'admin',
@@ -26,21 +28,30 @@ document.addEventListener('alpine:init', () => {
                 localStorage.setItem('user', JSON.stringify(user));
 
                 this.user = user;
+                /*this.flag = user.role === 'admin'; // Set flag to true if user is admin
+                localStorage.setItem('flag',JSON.stringify(flag));
+
+                */
                  return user;
             }
 
-            return false;
+            else {return false;}
         },
+        //authenticate_admin(username,password){
+
+        //}
         logout(){
             localStorage.removeItem('user');
             this.user = null;
         },
         init(){
             let user = localStorage.getItem('user');
+            
 
             if(user){
                 this.user = JSON.parse(user);
             }
+            
         }
     }); 
     

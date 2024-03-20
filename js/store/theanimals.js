@@ -25,7 +25,7 @@ document.addEventListener('alpine:init', () => {
             this.is_editor_visible = block_id;
         },
         saveBlock(block_id){
- // this is where you send the data to the server
+ //  send the data to the server
 
             this.toggleEditor(false);
         }
