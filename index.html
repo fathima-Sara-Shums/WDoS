@@ -9,12 +9,13 @@
     
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="//unpkg.com/alpinejs" defer></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
 </head>
 <body>
     
     <div  id="_home" x-data="{}">
-        >
+        
 
         <header class="bg-green-900" x-data="{ open: false }" >
             <nav class="flex items-center justify-between px-4 lg:px-12 py-2 lg:py-4 bg-green-800">
@@ -66,7 +67,7 @@
           <div class="container mx-auto">
             <div x-data="{ isAdmin: false ,isEditorVisible: false, userRole: localStorage.getItem('userRole') }" x-init="isAdmin = localStorage.getItem('isAdmin') === 'true'">
                 <div x-show="userRole === 'admin'" class="editor-popup">
-                    <!-- Content editor interface goes here -->
+                    
                 </div>
                 
                 <!-- Trigger button to open content editor popup -->
@@ -169,7 +170,7 @@
             </div>
     
         </section>
-        
+       
     
         <!--section to include image reel of popular sites/animals-->
         <section>
