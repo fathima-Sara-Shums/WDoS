@@ -5,7 +5,7 @@ document.addEventListener('alpine:init', () => {
             
             title: "Let the adventure begin",
             body: "Unleash your inner explorer! Witness majestic Asian elephants roam verdant plains, leopards stalk through emerald jungles, and playful dolphins frolic in turquoise waters. From graceful spotted deer to soaring eagles, every turn reveals a new wonder.Come,experience the wild of Sri Lanka!",
-            image: '/WDoS/images/bird.jpg',
+            image: 'WDoS/images/bird.jpg',
            
         },
         summary_view:{
@@ -15,7 +15,7 @@ document.addEventListener('alpine:init', () => {
             imagetwo:"/WDoS/images/wilpattu-national-park.jpeg",
             titletwo:"wilpattu",
             slogantwo:"Trade cityscapes for safariscapes in Wilpattu National Park.",
-            imagethree:"/WDoS/images/yala-animal.jpg",
+            imagethree:"WDoS/images/yala-animal.jpg",
             titlethree:"Yala",
             sloganthree:"Dive into the heart of Sri Lanka's wildlife wonderland - Yala",
             
@@ -26,7 +26,7 @@ document.addEventListener('alpine:init', () => {
             title:" Department of Wildlife Sri Lanka",
             subtitle:"Why trust us",
             body:"The Department of Wildlife Conservation has been entrusted with the responsibility of preserving eco system endowed with various plants and animal species which has inherited the country with enormous bio-diversity. The main function of the Department of Wildlife Conservation established in 1949 is the conservation of wildlife resources in Sri Lanka.",
-            image:"/WDoS/images/srilankan-elephant.jpeg",
+            image:"WDoS/images/srilankan-elephant.jpeg",
             link:"/wildlife-department.html",
 
         },
