@@ -8,10 +8,62 @@
     
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.7/dist/cdn.min.js" defer></script>
 </head>
+
 <body>
+  <header class="bg-green-900" x-data="{ open: false }" >
+    <nav class="flex items-center justify-between px-4 lg:px-12 py-2 lg:py-4 bg-green-800">
+      <!-- Logo -->
+      <img src="/WDoS/images/logo-no-background.png" alt="Wildlife SriLanka" class="w-64">
+      
+      <!-- Responsive Navigation -->
+      <div x-data="{ open: false }" class="lg:hidden">
+          <!-- Toggle Button for Mobile -->
+          <div @click="open = !open" class="cursor-pointer text-white">
+              <i class="fa-solid fa-bars"></i>
+          </div>
+          
+          <!-- Mobile Menu -->
+          <div x-show="open" @click.away="open = false" class="absolute top-0 left-0 w-full bg-green-800 py-4">
+              <ul class="flex flex-col items-center">
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="index.html">HOME</a></li>
+                  
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
+                  
+              </ul>
+          </div>
+      </div>
+  
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex flex-col lg:flex-row lg:items-center">
+          <ul class="flex flex-col lg:flex-row lg:gap-8">
+            <li class="text-white hover:text-yellow-200 py-2"><a href="index.html">HOME</a></li>
+                  
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
+                  <div x-data="{ isAdmin: false ,isEditorVisible: false, userRole: localStorage.getItem('userRole') }" x-init="isAdmin = localStorage.getItem('isAdmin') === 'true'">
+                    <li x-show="userRole === 'admin'"class="text-white hover:text-yellow-200 py-2"><a href="dashboard.html">SUBSCRIPTIONS</a></li>
+                  </div>
+                  
+                  
+                  
+                  
+              
+          </ul>
+          
+      </div>
+  </nav>
+  
+      
+    
+  </header>
   <div class='flex items-center justify-center lg:px-12 py-2 lg:py-4 bg-green-700' >
     <div x-data="emailList()" x-init="fetchEmails">
-      <h1 class="text-yellow-300 text-3xl">Subscribed Emails</h1>
+      <h1 class="text-yellow-300 text-3xl p-5">Subscribed Emails</h1>
       <div class="bg-yellow-600 text-green-300 p-8 font-mono">
         <ul>
           <template x-for="email in emails" :key="email">
