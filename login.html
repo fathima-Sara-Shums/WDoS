@@ -5,28 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <script src="//unpkg.com/alpinejs" defer></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.7/dist/cdn.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/app.js"></script>
 </head>
 
 <body>
+    
+        
+        
     <div id="_app" x-data="application">
-
-        <!-- <template x-for="user in $store.auth.users">
+        <template x-for="user in $store.auth.users">
             <div x-text="user.username"></div>
-        </template> -->
-
+        </template>
         <div x-show="$store.auth.user">
             <div x-text="$store.auth.user.username"></div>
-            <button class=" bg-yellow-900 text-white px-4 py-2 rounded-md" x-on:click="$store.auth.logout()">Logout</button>
+            <button class="bg-yellow-900 text-white px-4 py-2 rounded-md" style="display: block;" x-on:click="$store.auth.logout()">Logout</button>
         </div>
+
+        
+
+
        
         <template x-if="!$store.auth.user">
-                <form x-on:submit.prevent="authSubmit" class="bg-green-700 p-4 rounded-md" >
-                    <input type="text" x-model="username" placeholder="Username">
-                    <input type="password" x-model="password" placeholder="Password">
-                    <button type="submit"class="animate-bounce animate-thrice bg-yellow-900 text-white px-4 py-2 rounded-md" >Go! </button>
-                </form>
+            <div class="flex justify-center items-center min-h-screen  ">
+                <div class="w-full max-w-xs">
+                    <form x-on:submit.prevent="authSubmit" class=" bg-green-700 bg-opacity-80 rounded-md shadow-3xl p-5" >
+                        <h2 class="text-white font-mono  text-2xlm-1.5 py-2 ">WELCOME TO WILDLIFE SRILANKA</h2>
+                        <input type="text" x-model="username" placeholder="Username">
+                        <input type="password" x-model="password" placeholder="Password">
+                        <button type="submit"class="animate-bounce animate-thrice bg-yellow-900 text-white px-4 py-2 rounded-md" >Go! </button>
+                    </form>
+    
+                </div>
+
+            </div>
+            
+                
         </template>
 
         
@@ -34,9 +50,10 @@
 
     </div>
 
-    <script src="../js/app.js"></script>
+    
 
     <script>
+    
         document.addEventListener('alpine:init', () => {
             Alpine.data('application', () => ({
 
@@ -56,7 +73,7 @@
                     if (isAdmin) {
                         alert('Welcome ' + user.username + ', you can edit now.');
                     }
-                    location.href = '/index.html'; // Redirect to index.html after successful login
+                    location.href = 'index.html'; // Redirect to index.html after successful login
                 } else {
                     alert('You are not registered!');
                 }
