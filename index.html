@@ -9,7 +9,7 @@
     
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.7/dist/cdn.min.js"></script>
     
 </head>
 <body>
@@ -52,6 +52,10 @@
                           <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
                           <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
                           <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
+                          <div x-data="{ isAdmin: false ,isEditorVisible: false, userRole: localStorage.getItem('userRole') }" x-init="isAdmin = localStorage.getItem('isAdmin') === 'true'">
+                            <li x-show="userRole === 'admin'"class="text-white hover:text-yellow-200 py-2"><a href="dashboard.html">dahboard</a></li>
+                        </div>
+                          
                           
                           
                           
@@ -331,13 +335,32 @@
                       
                       <p class="mb-2">Phone: <a href="tel:+123456789" class="text-green-300">+1 (234) 567-89</a></p>
                   </div>
-                  <div class="newsletter">
-                    <h2 class="text-yellow 700">Subscribe to Our Newsletter</h2>
-                    <form x-data="{ email: '' }" @submit.prevent="subscribe">
-                      <input class="text-black"type="email" x-model="email" placeholder="Enter your email" required>
-                      <button class="bg-yellow-900 text-white px-4 py-2 rounded-md" type="submit">Subscribe</button>
-                    </form>
-                  </div>
+
+                  <div class="newsletter" x-data="{ email: '', subscribe() {
+                    // Retrieve the email from Alpine.js component state
+                    const email = this.email;
+              
+                    // Check if the email is already subscribed
+                    const subscribedEmails = JSON.parse(localStorage.getItem('subscribedEmails')) || [];
+                    if (subscribedEmails.includes(email)) {
+                      alert('You are already subscribed!');
+                      return;
+                    }
+              
+                    // Add the email to the list of subscribed emails
+                    subscribedEmails.push(email);
+                    localStorage.setItem('subscribedEmails', JSON.stringify(subscribedEmails));
+              
+                    // Show a success message
+                    alert('Thank you for subscribing!');
+                  } }">
+                <h2 class="text-yellow-700">Subscribe to Our Newsletter</h2>
+                <form @submit.prevent="subscribe">
+                  <input class="text-black" type="email" x-model="email" placeholder="Enter your email" required>
+                  <button class="bg-yellow-900 text-white px-4 py-2 rounded-md" type="submit">Subscribe</button>
+                </form>
+              </div>
+              
                   
                     
                   
@@ -392,6 +415,35 @@
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script >
+        
+        function subscribe() {
+          // Retrieve the email from the form
+          const email = this.email;
+      
+          // Check if the email is already subscribed
+          const subscribedEmails = JSON.parse(localStorage.getItem('subscribedEmails')) || [];
+          if (subscribedEmails.includes(email)) {
+            alert('You are already subscribed!');
+            return;
+          }
+      
+          // Add the email to the list of subscribed emails
+          subscribedEmails.push(email);
+          localStorage.setItem('subscribedEmails', JSON.stringify(subscribedEmails));
+      
+          // Show a success message
+          alert('Thank you for subscribing!');
+        }
+        
+    
+
+      
+      
+    </script>
+
+    
     
 
     <script type="text/javascript" src="js/store/home.js"></script>
