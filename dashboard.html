@@ -4,20 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subscribed Emails</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.7/dist/cdn.min.js" defer></script>
 </head>
 <body>
+  <div class='flex items-center justify-center lg:px-12 py-2 lg:py-4 bg-green-700' >
+    <div x-data="emailList()" x-init="fetchEmails">
+      <h1 class="text-yellow-300 text-3xl">Subscribed Emails</h1>
+      <div class="bg-yellow-600 text-green-300 p-8 font-mono">
+        <ul>
+          <template x-for="email in emails" :key="email">
+              <li x-text="email"></li>
+          </template>
+      </ul>
+      <p x-show="emails.length === 0">No subscribed emails yet.</p>
 
-<div x-data="emailList()" x-init="fetchEmails">
-    <h1>Subscribed Emails</h1>
-    <ul>
-        <template x-for="email in emails" :key="email">
-            <li x-text="email"></li>
-        </template>
-    </ul>
-    <p x-show="emails.length === 0">No subscribed emails yet.</p>
-</div>
+      </div>
+
+  </div>
+
+  </div>
+  
+
+
 
 
 <script>
