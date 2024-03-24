@@ -66,9 +66,7 @@
           </header>
           <div class="container mx-auto">
             <div x-data="{ isAdmin: false ,isEditorVisible: false, userRole: localStorage.getItem('userRole') }" x-init="isAdmin = localStorage.getItem('isAdmin') === 'true'">
-                <div x-show="userRole === 'admin'" class="editor-popup">
-                    
-                </div>
+                
                 
                 <!-- Trigger button to open content editor popup -->
                 <button x-show="userRole === 'admin'" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" @click="isEditorVisible = !isEditorVisible">
@@ -333,6 +331,16 @@
                       
                       <p class="mb-2">Phone: <a href="tel:+123456789" class="text-green-300">+1 (234) 567-89</a></p>
                   </div>
+                  <div class="newsletter">
+                    <h2 class="text-yellow 700">Subscribe to Our Newsletter</h2>
+                    <form x-data="{ email: '' }" @submit.prevent="subscribe">
+                      <input class="text-black"type="email" x-model="email" placeholder="Enter your email" required>
+                      <button class="bg-yellow-900 text-white px-4 py-2 rounded-md" type="submit">Subscribe</button>
+                    </form>
+                  </div>
+                  
+                    
+                  
                   <div class="mt-4 md:mt-0">
                     <h4>Follow us:</h4>
                     <ul>
