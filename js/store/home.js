@@ -5,7 +5,7 @@ document.addEventListener('alpine:init', () => {
             
             title: "Let the adventure begin",
             body: "Unleash your inner explorer! Witness majestic Asian elephants roam verdant plains, leopards stalk through emerald jungles, and playful dolphins frolic in turquoise waters. From graceful spotted deer to soaring eagles, every turn reveals a new wonder.Come,experience the wild of Sri Lanka!",
-            image: 'WDoS/images/bird.jpg',
+            image: '/WDoS/images/bird.jpg',
            
         },
         summary_view:{
@@ -62,7 +62,7 @@ document.addEventListener('alpine:init', () => {
  // send the data to the server
 
             this.toggleEditor(false);
-        }
+        },
     });
 });
 
