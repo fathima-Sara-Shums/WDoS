@@ -13,12 +13,12 @@ document.addEventListener('alpine:init', () => {
 
         },
         gallery:{
-            imageone:"WDoS/images/panther.jpeg",
-            imagetwo:"WDoS/images/centralhighlads.jpg",
-            imagethree:"WDoS/images/bluewhale.webp",
-            imagefour:"WDoS/images/leopardone.jpeg",
-            imagefive:"WDoS/images/hortain.jpeg",
-            imagesix:"WDoS/images/wilpattu-monkey.jpg",
+            imageone:"/WDoS/images/panther.jpeg",
+            imagetwo:"/WDoS/images/centralhighlads.jpg",
+            imagethree:"/WDoS/images/bluewhale.webp",
+            imagefour:"/WDoS/images/leopardone.jpeg",
+            imagefive:"/WDoS/images/hortain.jpeg",
+            imagesix:"/WDoS/images/wilpattu-monkey.jpg",
         },
 
         toggleEditor(block_id){
