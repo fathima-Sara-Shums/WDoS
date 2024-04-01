@@ -43,6 +43,7 @@ document.addEventListener('alpine:init', () => {
         logout(){
             localStorage.removeItem('user');
             this.user = null;
+            location.href = 'index.html';
         },
         init(){
             let user = localStorage.getItem('user');
@@ -53,25 +54,7 @@ document.addEventListener('alpine:init', () => {
             }
             
         },
-        //email subscriptions
-        subscribe() {
-            // Retrieve the email from the form
-            const email = this.email;
-        
-            // Check if the email is already subscribed
-            const subscribedEmails = JSON.parse(localStorage.getItem('subscribedEmails')) || [];
-            if (subscribedEmails.includes(email)) {
-              alert('You are already subscribed!');
-              return;
-            }
-        
-            // Add the email to the list of subscribed emails
-            subscribedEmails.push(email);
-            localStorage.setItem('subscribedEmails', JSON.stringify(subscribedEmails));
-        
-            // Show a success message
-            alert('Thank you for subscribing!');
-          }
+         
         }); 
     
     
