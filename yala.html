@@ -9,9 +9,11 @@
     
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/alpine.js" defer></script>
+
     
     
-    <script src="//unpkg.com/alpinejs" defer></script>
+    
 </head>
 <body>
  
@@ -31,7 +33,7 @@
             <!-- Mobile Menu -->
             <div x-show="open" @click.away="open = false" class="absolute top-0 left-0 w-full bg-green-800 py-4">
                 <ul class="flex flex-col items-center">
-                    <li class="text-white hover:text-yellow-200 py-2"><a href="index.html">HOME</a></li>
+                    <li class="text-white hover:text-yellow-200 py-2"><a href="home.html">HOME</a></li>
                     
                     <li class="text-white hover:text-yellow-200 py-2"><a href="/WDoS/wildlife-department.html">ABOUT US</a></li>
                     <li class="text-white hover:text-yellow-200 py-2"><a href="/WDoS/wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
@@ -45,7 +47,7 @@
         <!-- Desktop Navigation -->
         <div class="hidden lg:flex flex-col lg:flex-row lg:items-center">
             <ul class="flex flex-col lg:flex-row lg:gap-8">
-              <li class="text-white hover:text-yellow-200 py-2"><a href="index.html">HOME</a></li>
+              <li class="text-white hover:text-yellow-200 py-2"><a href="home.html">HOME</a></li>
                     
                     <li class="text-white hover:text-yellow-200 py-2"><a href="/WDoS/wildlife-department.html">ABOUT US</a></li>
                     <li class="text-white hover:text-yellow-200 py-2"><a href="/WDoS/wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
@@ -116,7 +118,7 @@
           <div class="grid md:grid-cols-2 ">
             
             <div>
-              <li class="font-bold">Book Safaris in Advance:</li>
+              <li x-model="$store.yalanp.tips.tip" class="font-bold"></li>
             
               <li class="font-bold">Visit During the Dry Season:</li>
             
@@ -155,6 +157,7 @@
       </ul>
       
       </section>
+    
 
 
     
@@ -189,74 +192,75 @@
         dropdown.classList.toggle('top-16');
       })
     </script>
-    <!-- Swiper JS -->
-<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-<script>
-    var swiper = new Swiper(".mySwiper", {
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-    });
-</script>
-<!-- Footer Section -->
-<footer class="bg-green-800 text-white w-full">
-  <div class="flex flex-col md:flex-row justify-between">
-
-      <!-- Logo -->
-      <div class="mb-4 md:mb-0 ">
-          <img src="/WDoS/images/logo-no-background.png" alt="Your Logo" class="w-64 h-auto">
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+    <!-- Footer Section -->
+    <footer class="bg-green-800 text-white w-full">
+      <div class="flex flex-col md:flex-row justify-between">
+    
+          <!-- Logo -->
+          <div class="mb-4 md:mb-0 ">
+              <img src="/WDoS/images/logo-no-background.png" alt="Your Logo" class="w-64 h-auto">
+              
+              <p class="mb-2">Phone: <a href="tel:+123456789" class="text-green-300">+1 (234) 567-89</a></p>
+          </div>
+          <div class="mt-4 md:mt-0">
+            <h4>Follow us:</h4>
+            <ul>
+                <li><a href="https://facebook.com/yourpage" target="_blank" ><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="https://www.instagram.com/" target="_blank" ></a><i class="fa-brands fa-instagram"></i></li>
+                
+              </ul>
+            
+            
+            
+        </div>
+    
+          <!-- Quick Links -->
+          <div class="flex flex-col  space-y-2 md:space-y-0 md:space-x-4">
+            <h4>Quick links:</h4>
+            <ul class="flex flex-col items-center">
+                <li class="text-white hover:text-yellow-200 py-2"><a href="home.html">HOME</a></li>
+                
+                <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
+                <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
+                <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
+                <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
+                
+            </ul>
+              
+          </div>
+    
           
-          <p class="mb-2">Phone: <a href="tel:+123456789" class="text-green-300">+1 (234) 567-89</a></p>
+    
       </div>
-      <div class="mt-4 md:mt-0">
-        <h4>Follow us:</h4>
-        <ul>
-            <li><a href="https://facebook.com/yourpage" target="_blank" ><i class="fa-brands fa-facebook"></i></a></li>
-            <li><a href="https://www.instagram.com/" target="_blank" ></a><i class="fa-brands fa-instagram"></i></li>
-            
-          </ul>
-        
-        
-        
-    </div>
-
-      <!-- Quick Links -->
-      <div class="flex flex-col  space-y-2 md:space-y-0 md:space-x-4">
-        <h4>Quick links:</h4>
-        <ul class="flex flex-col items-center">
-            <li class="text-white hover:text-yellow-200 py-2"><a href="/">HOME</a></li>
-            
-            <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
-            <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
-            <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
-            <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
-            
-        </ul>
-          
-      </div>
-
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="js/store/yalanp.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    
+    
+    
       
-
-  </div>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script type="text/javascript" src="/js/store/yalanp.js"></script>
-  <script type="text/javascript" src="/js/app.js"></script>
-
-
-  
-  
-
+      
     
-
+        
     
-
-
-
-
-
-
+        
     
-</body>
+    
+    
+    
+    
+    
+        
+  </body>
 </html>
+   

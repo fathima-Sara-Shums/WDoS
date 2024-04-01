@@ -6,8 +6,7 @@
     <title>wildlife-dept</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/css/styles.css" />
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
   </head>
@@ -29,7 +28,7 @@
                 <!-- Mobile Menu -->
                 <div x-show="open" @click.away="open = false" class="absolute top-0 left-0 w-full bg-green-800 py-4">
                     <ul class="flex flex-col items-center">
-                        <li class="text-white hover:text-yellow-200 py-2"><a href="index.html">HOME</a></li>
+                        <li class="text-white hover:text-yellow-200 py-2"><a href="home.html">HOME</a></li>
                         
                         <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
                         <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
@@ -43,7 +42,7 @@
             <!-- Desktop Navigation -->
             <div class="hidden lg:flex flex-col lg:flex-row lg:items-center">
                 <ul class="flex flex-col lg:flex-row lg:gap-8">
-                  <li class="text-white hover:text-yellow-200 py-2"><a href="index.html">HOME</a></li>
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="home.html">HOME</a></li>
                         
                         <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
                         <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
@@ -77,13 +76,13 @@
                   <div class="w-full">
                     <img x-bind:src="$store.common.imageSrc($store.wildlifedept.gallery.imageone)" alt="Protected Area 1" class="w-full h-64 object-cover mb-2">
                     <h4 x-text="$store.wildlifedept.gallery.titleone" class="text-green-700"></h4>
-                    <p $store.wildlifedept.gallery.infoone class="text-green-500"></p>
+                    <p x-text="$store.wildlifedept.gallery.infoone" class="text-green-500"></p>
                   </div>
                   <!-- Gallery items 2 -->
                   <div class="w-full">
                     <img x-bind:src="$store.common.imageSrc($store.wildlifedept.gallery.imagetwo)" alt="Protected Area 2" class="w-full h-64 object-cover mb-2">
                     <h4 x-text="$store.wildlifedept.gallery.titletwo" class="text-green-700"> </h4>
-                    <p $store.wildlifedept.gallery.infotwo class="text-green-500"></p>
+                    <p x-text="$store.wildlifedept.gallery.infotwo" class="text-green-500"></p>
                   </div>
   
                   
@@ -91,7 +90,7 @@
                   <div class="w-full">
                     <img x-bind:src="$store.common.imageSrc($store.wildlifedept.gallery.imagethree)" alt="Protected Area 3" class="w-full h-64 object-cover mb-2">
                     <h4 x-text="$store.wildlifedept.gallery.titlethree" class="text-green-700"> </h4>
-                    <p $store.wildlifedept.gallery.infothree class="text-green-500"></p>
+                    <p x-text="$store.wildlifedept.gallery.infothree" class="text-green-500"></p>
                   </div>
                 </div>
                 
@@ -150,7 +149,7 @@
               <div class="flex flex-col  space-y-2 md:space-y-0 md:space-x-4">
                 <h4>Quick links:</h4>
                 <ul class="flex flex-col items-center">
-                    <li class="text-white hover:text-yellow-200 py-2"><a href="index.html">HOME</a></li>
+                    <li class="text-white hover:text-yellow-200 py-2"><a href="home.html">HOME</a></li>
                     
                     <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
                     <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
@@ -180,8 +179,8 @@
       })
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script type="text/javascript" src="/js/store/wildlifedept.js"></script>
-    <script type="text/javascript" src="/js/app.js"></script>
+    <script type="text/javascript" src="js/store/wildlifedept.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
     
 
     

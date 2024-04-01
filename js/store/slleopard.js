@@ -1,6 +1,15 @@
 document.addEventListener('alpine:init', () => {
     Alpine.store('slleopard', {
         is_editor_visible: false,
+        details:{
+            heading:"Sri Lankan Leopard",
+            title:"WHERE LEOPARDS ARE FOUND?",
+            futher:"The Sri Lankan Leopard is found in the following venues:",
+            locationone:"Yala National Park",
+            locationtwo:"Wilpattu National Park",
+            locationthree:"Horton Plains National Park",
+
+        },
 
         threat_one:{
             title:"Threat 1: Habitat Loss",
