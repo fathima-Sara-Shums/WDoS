@@ -65,12 +65,15 @@
                     
                         
                     if (user) {
-                    alert('Welcome ' + user.username + '!');
+                    
                     let isAdmin = user.role === 'admin';
-                    localStorage.setItem('isAdmin', isAdmin);
+                    
                     localStorage.setItem('userRole', user.role);
                     if (isAdmin) {
                         alert('Welcome ' + user.username + ', you can edit now.');
+                    }
+                    else{
+                        alert('Welcome ' + user.username + '!');
                     }
                     location.href = 'home.html'; // Redirect to index.html after successful login
                 } else {
