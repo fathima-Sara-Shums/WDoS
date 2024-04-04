@@ -12,50 +12,65 @@
     <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 <body>
-    <header class="bg-green-900" x-data="{ open: false }">
-        <nav class="flex items-center justify-between px-4 lg:px-12 py-2 lg:py-4 bg-green-800">
-          <!-- Logo -->
-          <img src="/WDoS/images/logo-no-background.png" alt="Wildlife SriLanka" class="w-64">
-          
-          <!-- Responsive Navigation -->
-          <div x-data="{ open: false }" class="lg:hidden">
-              <!-- Toggle Button for Mobile -->
-              <div @click="open = !open" class="cursor-pointer text-white">
-                  <i class="fa-solid fa-bars"></i>
-              </div>
-              
-              <!-- Mobile Menu -->
-              <div x-show="open" @click.away="open = false" class="absolute top-0 left-0 w-full bg-green-800 py-4">
-                  <ul class="flex flex-col items-center">
-                      <li class="text-white hover:text-yellow-200 py-2"><a href="home.html">HOME</a></li>
-                      
-                      <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
-                      <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
-                      <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
-                      <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
-                      >
-                  </ul>
-              </div>
-          </div>
+  <header class="bg-green-900" x-data="{ open: false }" >
+    <nav class="flex items-center justify-between px-4 lg:px-12 py-2 lg:py-4 bg-green-800">
+      <!-- Logo -->
+      <img src="/WDoS/images/logo-no-background.png" alt="Wildlife SriLanka" class="w-64">
       
-          <!-- Desktop Navigation -->
-          <div class="hidden lg:flex flex-col lg:flex-row lg:items-center">
-              <ul class="flex flex-col lg:flex-row lg:gap-8">
-                <li class="text-white hover:text-yellow-200 py-2"><a href="home.html">HOME</a></li>
-                      
-                      <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
-                      <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
-                      <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
-                      <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
-                      
+      <!-- Responsive Navigation -->
+      <div x-data="{ open: false }" class="lg:hidden">
+          <!-- Toggle Button for Mobile -->
+          <div @click="open = !open" class="cursor-pointer text-white">
+              <i class="fa-solid fa-bars"></i>
+          </div>
+          
+          <!-- Mobile Menu -->
+          <div x-show="open" @click.away="open = false" class="absolute top-0 left-0 w-full bg-green-800 py-4">
+              <ul class="flex flex-col items-center">
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="home.html">HOME</a></li>
+                  
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
                   
               </ul>
           </div>
-      </nav>
-      
+      </div>
+  
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex flex-col lg:flex-row lg:items-center">
+          <ul class="flex flex-col lg:flex-row lg:gap-8">
+            <li class="text-white hover:text-yellow-200 py-2"><a href="home.html">HOME</a></li>
+                  
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
+                  <div x-data="{ isAdmin: false ,isEditorVisible: false, userRole: localStorage.getItem('userRole') }" x-init="isAdmin = localStorage.getItem('isAdmin') === 'true'">
+                    <li x-show="userRole === 'admin'"class="text-white hover:text-yellow-200 py-2"><a href="dashboard.html">SUBCRIPTIONS</a></li>
+                  </div>
+                  <div id="_app" x-data="{}">
+
+
+                    <div x-show="$store.auth.user">
+                        
+                        <button class="bg-yellow-900 text-white px-4 py-2 rounded-md" style="display: block;" x-on:click="$store.auth.logout()">Logout</button>
+                    </div>
+                  
+                  
+                  
+                  
+              
+          </ul>
           
-        
-    </header>
+      </div>
+  </nav>
+  
+      
+    
+  </header>
+
     <div class="container mx-auto px-4 py-8">
         <div class="font-sans bg-yellow-100">
           <!-- main topic -->
