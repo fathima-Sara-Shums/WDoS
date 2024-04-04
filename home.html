@@ -55,6 +55,13 @@
                           <div x-data="{ isAdmin: false ,isEditorVisible: false, userRole: localStorage.getItem('userRole') }" x-init="isAdmin = localStorage.getItem('isAdmin') === 'true'">
                             <li x-show="userRole === 'admin'"class="text-white hover:text-yellow-200 py-2"><a href="dashboard.html">SUBCRIPTIONS</a></li>
                           </div>
+                          <div id="_app" x-data="{}">
+
+
+                            <div x-show="$store.auth.user">
+                                
+                                <button class="bg-yellow-900 text-white px-4 py-2 rounded-md" style="display: block;" x-on:click="$store.auth.logout()">Logout</button>
+                            </div>
                           
                           
                           
@@ -69,7 +76,7 @@
             
           </header>
           <div class="container mx-auto">
-            <div x-data="{ isAdmin: false ,isEditorVisible: false, userRole: localStorage.getItem('userRole') }" x-init="isAdmin = localStorage.getItem('isAdmin') === 'true'">
+            <div x-data="{ isEditorVisible: false, userRole: localStorage.getItem('userRole') }" >
                 
                 
                 <!-- Trigger button to open content editor popup -->
@@ -103,12 +110,16 @@
                             <!-- Add similar inputs for Title One, Slogan One, Image Two, Title Two, Slogan Two, Image Three, Title Three, Slogan Three -->
                         </div>
                     </div>
-        
                     <!-- Save button -->
-                    <button @click="saveChanges" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save Changes</button>
+                    <button @click=" isEditorVisible=false;saveChanges()" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save Changes</button>
+        
+                    
                 </div>
+
             </div>
+            
         </div>
+
         
 
 
@@ -146,7 +157,7 @@
     
         
         <!--main image and welcome section-->
-        <section>
+        
             <div class="container mx-auto"></div>
     
             
@@ -164,25 +175,25 @@
                         <p  x-text="$store.home.block_one.body" class=" leading-7 font-mono  mt-2">
                            
                         </p>
+                        <p x-text="$store.home.summary_view.sloganone"></p>
                         
                         
                         
                     </div>
                 </div>
-            </div>
-    
-        </section>
+        
+
        
     
         <!--section to include image reel of popular sites/animals-->
-        <section>
+        
             <p class="text-green-800 text-3xl font-bold font-mono">Popular:</p>
     
         <div class="grid  grid-cols-1 mb-4 md:grid-cols-3  ">
             
             <div>
-                <img x-bind:src="$store.common.imageSrc($store.home.summary_view.imageone)"class="w-full h-64 object-cover mb-2" alt="leopard"> 
-                <a x-bind:href="$store.summary_view.titleone"></a>
+                <img x-bind:src="store.home.summary_view.imageone" class="w-full h-64 object-cover mb-2" alt="leopard"> 
+                <a x-bind:href="$store.home.block_one.title"></a>
                 <p x-text="$store.home.summary_view.sloganone" class="italic">
                 </p>
                 
@@ -190,7 +201,7 @@
              </div>
              <div>
                 <img x-bind:src="$store.common.imageSrc($store.home.summary_view.imagetwo)"class="w-full h-64 object-cover mb-2" alt="wilpattu"> 
-                <a x-bind:href="$store.summary_view.titletwo"></a>
+                <a x-bind:href="$store.home.summary_view.titletwo"></a>
                 <p x-text="$store.home.summary_view.slogantwo" class="italic">
                 </p>
                 
@@ -198,7 +209,7 @@
              </div>
              <div>
                 <img x-bind:src="$store.common.imageSrc($store.home.summary_view.imagethree)"class="w-full h-64 object-cover mb-2" alt="yala"> 
-                <a x-bind:href="$store.summary_view.titlethree"></a>
+                <a x-bind:href="$store.home.summary_view.titlethree"></a>
                 <p x-text="$store.home.summary_view.sloganthree" class="italic">
                 </p>
                 
@@ -208,14 +219,14 @@
     
         </div>
     
-        </section>
+        
         
         
         
         
         
         <!--why trust us section-->
-        <section>
+        
             <div class="container mx-auto">
                 <div class="grid lg:grid-cols-2 gap-6 my-8">
                     
@@ -224,7 +235,7 @@
                         <h2 x-text="$store.home.block_two.title" class="text-2xl text-green-700 font-bold  mt-2">
                             
                         </h2>
-                        <p class="text-sm leading-7 mt-2"x-text="$store.home.block_two.body" >
+                        <p x-text="$store.home.block_two.body" class="text-sm leading-7 mt-2">
                             
                         </p>
                         <span class=" text-sm pt-3 block hover:bg-green-500">
@@ -238,10 +249,10 @@
                 </div>
             </div>
     
-        </section>
+        
         
         <!--Yala-->
-        <section>
+        
             <div class="container mx-auto">
                 <div class="grid lg:grid-cols-2 gap-6 my-8">
                     <div>
@@ -267,10 +278,10 @@
                 </div>
             </div>
     
-        </section>
+        
         
         <!--wilpattu-->
-        <section>
+        
             <div class="grid lg:grid-cols-2 gap-6 my-8">
                 
                 <div class="relative">
@@ -296,7 +307,7 @@
                 </div>
             </div>
     
-        </section>
+        
     
          <!--boost and Quick details-->
     
@@ -353,11 +364,21 @@
                     // Show a success message
                     alert('Thank you for subscribing!');
                   } }">
-                <h2 class="text-yellow-700">Subscribe to Our Newsletter</h2>
-                <form @submit.prevent="subscribe">
-                  <input class="text-black" type="email" x-model="email" placeholder="Enter your email" required>
-                  <button class="bg-yellow-900 text-white px-4 py-2 rounded-md" type="submit">Subscribe</button>
-                </form>
+                  <!--get the user role from the local storage-->
+                  <div x-data="{ userRole: localStorage.getItem('userRole') }">
+                    <!--only show subscription form if it's the user who logged in,not the admin-->
+                    <div x-show="userRole === 'user'" >
+                        <h2 class="text-yellow-700">Subscribe to Our Newsletter</h2>
+                        <form @submit.prevent="subscribe">
+                            <input class="text-black" type="email" x-model="email" placeholder="Enter your email" required>
+                            <button class="bg-yellow-900 text-white px-4 py-2 rounded-md" type="submit">Subscribe</button>
+                        </form>
+
+                    </div>
+                    
+
+                  </div>
+                
               </div>
 
         
@@ -398,6 +419,7 @@
     
               </div>
           </footer>
+          
     
 
     </div>
@@ -444,12 +466,13 @@
       
       
     </script>
-
-    
-    
-
     <script type="text/javascript" src="js/store/home.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/app.js"></script> 
+
+    
+    
+
+    
 
   
 
