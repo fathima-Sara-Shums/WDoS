@@ -17,6 +17,17 @@ document.addEventListener('alpine:init', () => {
             body:"Maduru Oya National Park is one of the National Parks of Sri Lanka. It was designated as a National Park on 9th November 1983.",
             map:"",
         },
+        table:{
+            columnone:"",
+            columntwo:"",
+            columnthree:"",
+
+        },
+        content:{
+            animal:"",
+            funfact:"",
+            img:"",
+        },
 
         toggleEditor(block_id){
             this.is_editor_visible = block_id;
