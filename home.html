@@ -99,16 +99,7 @@
                             <label class="block text-lg font-bold mb-2">Body</label>
                             <textarea x-model="$store.home.block_one.body" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_one_body" placeholder="Body"></textarea>
                         </div>
-                        <!-- Summary -->
-                        <div class="mb-6">
-                            <label class="block text-lg font-bold mb-2">Summary View</label>
-                            <!-- Image One -->
-                            <div class="mb-4">
-                                <label class="block text-lg font-bold">Image One</label>
-                                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="home_summaryview_imageone" type="text" placeholder="Image URL">
-                            </div>
-                            <!-- Add similar inputs for Title One, Slogan One, Image Two, Title Two, Slogan Two, Image Three, Title Three, Slogan Three -->
-                        </div>
+                        
                     </div>
                     <!-- Save button -->
                     <button @click=" isEditorVisible=false;saveChanges()" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save Changes</button>
@@ -188,6 +179,39 @@
         <!--section to include image reel of popular sites/animals-->
         
             <p class="text-green-800 text-3xl font-bold font-mono">Popular:</p>
+            <div x-data="{ isEditorVisible: false, userRole: localStorage.getItem('userRole') }"  >
+                <button x-show="userRole === 'admin'" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" @click="isEditorVisible = !isEditorVisible">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+                <div class="bg-green-500" x-show="isEditorVisible">
+                    <!-- Summary -->
+                    <div class="mb-6">
+                        <label class="block text-lg font-bold mb-2">Summary View</label>
+                        <!-- Image One -->
+                        <div class="mb-4">
+                            <label class="block text-lg font-bold">Image One</label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="home_summaryview_imageone" type="text" placeholder="Image URL">
+                        </div>
+                        <div>
+                            <label class="block text-lg font-bold mb-2">page one</label>
+                            <input x-model="$store.home.summary_view.titleone" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="summary_view_titleone" type="text" placeholder="page">
+                            <label class="block text-lg font-bold mb-2">page one</label>
+                            <input x-model="$store.home.summary_view.titleone" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="summary_view_titleone" type="text" placeholder="page">
+                            <label class="block text-lg font-bold mb-2">page one</label>
+                            <input x-model="$store.home.summary_view.titleone" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="summary_view_titleone" type="text" placeholder="page">
+                            <div>
+                                <button @click=" isEditorVisible=false;saveChanges()" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save Changes</button>
+                            </div>
+
+                        </div>
+
+                        <!-- Add similar inputs for Title One, Slogan One, Image Two, Title Two, Slogan Two, Image Three, Title Three, Slogan Three -->
+                    </div>
+
+                </div>
+
+          
+              </div>
     
         <div class="grid  grid-cols-1 mb-4 md:grid-cols-3  ">
             
@@ -446,11 +470,54 @@
             }
             
         </script>
-          
+        <script>
+            function saveChanges() {
+            // Get the content to be saved
+            const content = {
+                block_one: {
+                    title: this.$store.home.block_one.title,
+                    body: this.$store.home.block_one.body,
+                    summaryView: {
+                        imageOne: document.getElementById('home_summaryview_imageone').value,
+                        // Add similar lines for other fields in the summary view
+                    }
+                }
+            };
+
+            // Convert content to JSON and save to local storage
+            localStorage.setItem('content', JSON.stringify(content));
+
+            // Hide the editor
+            this.isEditorVisible = false;
+        }
+            function loadData() {
+            // Retrieve content from local storage
+             const savedContent = localStorage.getItem('content');
+
+            //bind content available in the local storgae if its saved
+            if (savedContent) {
+                const parsedContent = JSON.parse(savedContent);
+                this.$store.home.block_one.title = parsedContent.block_one.title;
+                this.$store.home.block_one.body = parsedContent.block_one.body;
+                // Bind summary view fields
+                document.getElementById('home_summaryview_imageone').value = parsedContent.block_one.summaryView.imageOne;
+                // Bind other fields in the summary view similarly
+            }
+        }
+        window.addEventListener('load', loadData);
+        
+    
+
+
+
+    
+        </script>
+
     
 
     </div>
       
+    
   
  
 
@@ -466,6 +533,11 @@
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadData();
+        });
+    </script>
     
 
     
