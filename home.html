@@ -20,7 +20,7 @@
         <header class="bg-green-900" x-data="{ open: false }" >
             <nav class="flex items-center justify-between px-4 lg:px-12 py-2 lg:py-4 bg-green-800">
               <!-- Logo -->
-              <img x-bind:src="$store.home.block_one.image" alt="Wildlife SriLanka" class="w-64">
+              <img x-bind:src="$store.home.block_one.logo" alt="Wildlife SriLanka" class="w-64">
               
               <!-- Responsive Navigation -->
               <div x-data="{ open: false }" class="lg:hidden">
@@ -175,7 +175,7 @@
                         <p  x-text="$store.home.block_one.body" class=" leading-7 font-mono  mt-2">
                            
                         </p>
-                        <p x-text="$store.home.summary_view.sloganone"></p>
+                        
                         
                         
                         
@@ -364,19 +364,23 @@
                     // Show a success message
                     alert('Thank you for subscribing!');
                   } }">
-                <!--get the user role from the local storage-->
-                <div x-data="{ userRole: localStorage.getItem('userRole') }">
-                
-                    <!--only show subscription form if it's the user who logged in,not the admin-->
-                    <div x-show="userRole === 'user'" >
-
+                  <div x-data="{ userRole: localStorage.getItem('userRole') }">
+                    <div x-show="userRole !== 'admin'" >
                         <h2 class="text-yellow-700">Subscribe to Our Newsletter</h2>
                         <form @submit.prevent="subscribe">
                             <input class="text-black" type="email" x-model="email" placeholder="Enter your email" required>
                             <button class="bg-yellow-900 text-white px-4 py-2 rounded-md" type="submit">Subscribe</button>
-                        </form>
-
+                    </form>
                     </div>
+                    
+
+
+                  </div>
+
+
+
+                       
+                    
                     
 
                 </div>
