@@ -90,19 +90,23 @@
 
                     -->
                     <!-- Block One -->
-                    <div h4="block_one"> 
-                        <div class="mb-6">
-                            <label class="block text-lg font-bold mb-2">Title</label>
-                            <input x-model="$store.home.block_one.title" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_one_title" type="text" placeholder="Title">
+                    <div id="_app" x-data="application">
+                        <div h4="block_one"> 
+                            <div class="mb-6">
+                                <label class="block text-lg font-bold mb-2">Title</label>
+                                <input x-model="$store.home.block_one.title" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_one_title" type="text" placeholder="Title">
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-lg font-bold mb-2">Body</label>
+                                <textarea x-model="$store.home.block_one.body" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_one_body" placeholder="Body"></textarea>
+                            </div>
+                            
                         </div>
-                        <div class="mb-6">
-                            <label class="block text-lg font-bold mb-2">Body</label>
-                            <textarea x-model="$store.home.block_one.body" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_one_body" placeholder="Body"></textarea>
-                        </div>
-                        
+
                     </div>
+                    
                     <!-- Save button -->
-                    <button @click=" isEditorVisible=false;saveChanges()" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save Changes</button>
+                    <button @click=" isEditorVisible=false;saveChanges" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save Changes</button>
         
                     
                 </div>
@@ -200,7 +204,7 @@
                             <label class="block text-lg font-bold mb-2">page three</label>
                             <input x-model="$store.home.summary_view.titlethree" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="summary_view_titlethree" type="text" placeholder="page three">
                             <div>
-                                <button @click=" isEditorVisible=false;saveChanges()" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save Changes</button>
+                                <button @click=" isEditorVisible=false;saveChanges" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save Changes</button>
                             </div>
 
                         </div>
@@ -325,7 +329,7 @@
                             <label class="block text-lg font-bold mb-2">Body</label>
                             <textarea x-model="$store.home.block_three.body" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_three_body" placeholder="Body"></textarea>
                         </div>
-                        <button @click=" isEditorVisible=false;saveChanges()" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save Changes</button>
+                        <button @click=" isEditorVisible=false;saveChanges" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save Changes</button>
         
                         
                     </div>
@@ -379,7 +383,7 @@
                             <label class="block text-lg font-bold mb-2">Body</label>
                             <textarea x-model="$store.home.block_four.body" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_four_body" placeholder="Body"></textarea>
                         </div>
-                        <button @click=" isEditorVisible=false;saveChanges()" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save Changes</button>
+                        <button @click="!isEditorVisible" ;class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save Changes</button>
         
                         
                     </div>
@@ -553,53 +557,41 @@
             
         </script>
         <script>
-            function saveChanges() {
-            // Get the content to be saved
-            const content = {
-                block_one: {
-                    title: this.$store.home.block_one.title,
-                    body: this.$store.home.block_one.body,
-                    summaryView: {
-                        imageOne: document.getElementById('home_summaryview_imageone').value,
-                        // Add similar lines for other fields in the summary view
-                    }
-                }
-            };
-
-
-            // Convert content to JSON and save to local storage
-            localStorage.setItem('content', JSON.stringify(content));
-            loadData()
-
-            // Hide the editor
-            this.isEditorVisible = false;
-        }
-            function loadData(){
-                // Retrieve content from local storage
-             const savedContent = localStorage.getItem('content');
-             //bind content available in the local storgae if its saved
-             if (savedContent) {
-                const parsedContent = JSON.parse(savedContent);
-                this.$store.home.block_one.title = parsedContent.block_one.title;
-                this.$store.home.block_one.body = parsedContent.block_one.body;
-                // Bind summary view fields
-                document.getElementById('home_summaryview_imageone').value = parsedContent.block_one.summaryView.imageOne;
-                // Bind other fields in the summary view similarly
-            }
-        }
-        window.addEventListener('load', loadData);
-
-                        
-
-            
-            
+            document.addEventListener('alpine:init', () => {
+                Alpine.data('application', () => ({
+                    saveChanges() {
+                        const content = {
+                            block_one: {
+                                title: this.$store.home.block_one.title,
+                                body: this.$store.home.block_one.body,
+                                summaryView: {
+                                    imageOne: document.getElementById('home_summaryview_imageone').value,
+                                    // Add similar lines for other fields in the summary view
+                                }
+                            }
+                        };
         
-    
-
-
-
-    
+                        // Convert content to JSON and save to local storage
+                        localStorage.setItem('content', JSON.stringify(content));
+                        this.loadData(); // Call loadData() after saving
+                    },
+                    loadData() {
+                        // Retrieve content from local storage
+                        const savedContent = localStorage.getItem('content');
+                        // Bind content available in the local storage if it's saved
+                        if (savedContent) {
+                            const parsedContent = JSON.parse(savedContent);
+                            this.$store.home.block_one.title = parsedContent.block_one.title;
+                            this.$store.home.block_one.body = parsedContent.block_one.body;
+                            // Bind summary view fields
+                            document.getElementById('home_summaryview_imageone').value = parsedContent.block_one.summaryView.imageOne;
+                            // Bind other fields in the summary view similarly
+                        }
+                    }
+                }))
+            })
         </script>
+        
 
     
 
