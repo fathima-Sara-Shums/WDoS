@@ -216,10 +216,57 @@
 
       <!-- Logo -->
       <div class="mb-4 md:mb-0 ">
-          <img src="/WDoS/images/logo-no-background.png" alt="Your Logo" class="w-64 h-auto">
+          <img src="images/logo-no-background.png" alt="Your Logo" class="w-64 h-auto">
           
           <p class="mb-2">Phone: <a href="tel:+123456789" class="text-green-300">+1 (234) 567-89</a></p>
       </div>
+      <div class="newsletter" x-data="{ email: '', subscribe() {
+        // Retrieve the email from Alpine.js component state
+        const email = this.email;
+  
+        // Check if the email is already subscribed
+        const subscribedEmails = JSON.parse(localStorage.getItem('subscribedEmails')) || [];
+        if (subscribedEmails.includes(email)) {
+          alert('You are already subscribed!');
+          return;
+        }
+  
+        // Add the email to the list of subscribed emails
+        subscribedEmails.push(email);
+        localStorage.setItem('subscribedEmails', JSON.stringify(subscribedEmails));
+  
+        // Show a success message
+        alert('Thank you for subscribing!');
+      } }">
+      <div x-data="{ userRole: localStorage.getItem('userRole') }">
+        <div x-show="userRole !== 'admin'" >
+            <h2 class="text-yellow-700">Subscribe to Our Newsletter</h2>
+            <form @submit.prevent="subscribe">
+                <input class="text-black" type="email" x-model="email" placeholder="Enter your email" required>
+                <button class="bg-yellow-900 text-white px-4 py-2 rounded-md" type="submit">Subscribe</button>
+        </form>
+        </div>
+        
+
+
+      </div>
+
+
+
+           
+        
+        
+
+    </div>
+    
+  </div>
+
+
+      
+  
+      
+        
+      
       <div class="mt-4 md:mt-0">
         <h4>Follow us:</h4>
         <ul>
@@ -247,7 +294,7 @@
           
       </div>
 
-     
+      
       
 
   </div>
