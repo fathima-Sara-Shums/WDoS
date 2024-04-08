@@ -146,9 +146,9 @@
                     <table class="w-full border-collapse table-auto">
                         <thead>
                             <tr class="text-sm font-semibold text-gray-700 bg-green-300">
-                                <th class="p-2 border">Name</th>
-                                <th class="p-2 border">Fun Fact</th>
-                                <th class="p-2 border">Image</th>
+                                <th x-text="$store.wildlifesl.table.headerone" class="p-2 border"></th>
+                                <th x-text="$store.wildlifesl.table.headertwo"class="p-2 border"></th>
+                                <th x-text="$store.wildlifesl.table.headerthree" class="p-2 border"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -157,23 +157,23 @@
                                 <td x-text="$store.wildlifesl.table.animal" class="p-2 border"></td>
                                 <td x-text="$store.wildlifesl.blockthree.title" class="p-2 border"></td>
                                 <td class="p-2 border">
-                                    <img src="/WDoS/images/leopardone.jpeg" alt="Leopard" class="w-64 h-48 mx-auto">
+                                    <img x-bind:src="$store.wildlifesl.table.img" alt="Leopard" class="w-64 h-48 mx-auto">
                                 </td>
                             </tr>
                             <!-- Row2 -->
                             <tr class="text-sm text-gray-700 bg-white border-b">
                                 <td x-text="$store.wildlifesl.table.animaltwo" class="p-2 border"></td>
-                                <td x-text="$store.wildlifesl.table.funfacttwo" class="p-2 border">they are very big,usually.</td>
+                                <td x-text="$store.wildlifesl.table.funfacttwo" class="p-2 border"></td>
                                 <td class="p-2 border">
-                                    <img src="/WDoS/images/elephant.jpg" alt="Leopard" class="w-64 h-48 mx-auto">
+                                    <img x-bind:src="$store.wildlifesl.table.imgtwo" alt="Leopard" class="w-64 h-48 mx-auto">
                                 </td>
                             </tr>
                             <!-- Row 3 -->
                             <tr class="text-sm text-grey-700 bg-white border-b">
                                 <td x-text="$store.wildlifesl.table.animalthree" class="p-2 border"></td>
-                                <td x-text="$store.wildlifesl.table.funfactthree" class="p-2 border">Mouse deers arent actually "deers".</td>
+                                <td x-text="$store.wildlifesl.table.funfactthree" class="p-2 border"></td>
                                 <td class="p-2 border">
-                                    <img src="/WDoS/images/mouse-deer.jpeg" alt="Leopard" class="w-64 h-48 mx-auto">
+                                    <img x-bind:src="$store.wildlifesl.table.imgthree" alt="Leopard" class="w-64 h-48 mx-auto">
                                 </td>
                             </tr>
     

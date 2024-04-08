@@ -22,16 +22,21 @@ document.addEventListener('alpine:init', () => {
             map:"",
         },
         table:{
-            columnone:"",
-            columntwo:"",
-            columnthree:"",
+            headerone:"Name",
+            headertwo:"Fun Fact",
+            headerthree:"Image",
+            animal:"Leopard",
+            funfact:"Leopards can climb trees.",
+            img:"",
+            animaltwo:"Elephants",
+            funfacttwo:"",
+            imgtwo:"",
+            animalthree:"Mouse deer",
+            funfactthree:"",
+            imgthree:"",
 
         },
-        content:{
-            animal:"",
-            funfact:"",
-            img:"",
-        },
+       
 
         toggleEditor(block_id){
             this.is_editor_visible = block_id;
