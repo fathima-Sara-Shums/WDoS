@@ -70,7 +70,7 @@
       
     
   </header>
-  <div id="_theanimals" x-data="_home">
+  <div id="_theanimals" x-data="_theanimals">
     <div x-data="{ isEditorVisible: false, userRole: localStorage.getItem('userRole') }"  >
       <button x-show="userRole === 'admin'" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" @click="isEditorVisible = !isEditorVisible">
         <i class="fa-solid fa-pen-to-square"></i>
