@@ -54,13 +54,21 @@ document.addEventListener('alpine:init', () => {
             }
             
         },
+        
+        
+
+    
+
+      
+      
+    
          
         }); 
+        Alpine.store('common', {
+            imageSrc(src){    
+                return 'http://127.0.0.1:5500' + src;
+            }
+        });
     
     
-    Alpine.store('common', {
-        imageSrc(src){    
-            return 'http://127.0.0.1:5500' + src;
-        }
-    });
 });
