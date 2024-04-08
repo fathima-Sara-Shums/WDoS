@@ -2,20 +2,21 @@ document.addEventListener('alpine:init', () => {
     Alpine.store('home', {
         is_editor_visible: false,
         block_one : {
+            logo:'/images/logo-no-background.png',
             
             title: "Let the adventure begin",
             body: "Unleash your inner explorer! Witness majestic Asian elephants roam verdant plains, leopards stalk through emerald jungles, and playful dolphins frolic in turquoise waters. From graceful spotted deer to soaring eagles, every turn reveals a new wonder.Come,experience the wild of Sri Lanka!",
-            image: '/WDoS/images/bird.jpg',
+            image: '/images/bird.jpg',
            
         },
         summary_view:{
-            imageone:"/WDoS/images/yala-suduwelimulla.webp",
+            imageone:"/images/yala-suduwelimulla.webp",
             titleone:"Leopards",
             sloganone:"Sri Lanka's stealthy royalty: Spot the elusive leopard, king of the island's jungles.",
-            imagetwo:"/WDoS/images/wilpattu-national-park.jpeg",
+            imagetwo:"images/wilpattu-national-park.jpeg",
             titletwo:"wilpattu",
             slogantwo:"Trade cityscapes for safariscapes in Wilpattu National Park.",
-            imagethree:"WDoS/images/yala-animal.jpg",
+            imagethree:"images/yala-animal.jpg",
             titlethree:"Yala",
             sloganthree:"Dive into the heart of Sri Lanka's wildlife wonderland - Yala",
             
