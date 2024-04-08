@@ -194,18 +194,18 @@
                         </div>
                         <div>
                             <label class="block text-lg font-bold mb-2">page one</label>
-                            <input x-model="$store.home.summary_view.titleone" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="summary_view_titleone" type="text" placeholder="page">
-                            <label class="block text-lg font-bold mb-2">page one</label>
-                            <input x-model="$store.home.summary_view.titleone" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="summary_view_titleone" type="text" placeholder="page">
-                            <label class="block text-lg font-bold mb-2">page one</label>
-                            <input x-model="$store.home.summary_view.titleone" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="summary_view_titleone" type="text" placeholder="page">
+                            <input x-model="$store.home.summary_view.titleone" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="summary_view_titleone" type="text" placeholder="page one">
+                            <label class="block text-lg font-bold mb-2">page two</label>
+                            <input x-model="$store.home.summary_view.titletwo" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="summary_view_titletwo" type="text" placeholder="page two">
+                            <label class="block text-lg font-bold mb-2">page three</label>
+                            <input x-model="$store.home.summary_view.titlethree" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="summary_view_titlethree" type="text" placeholder="page three">
                             <div>
                                 <button @click=" isEditorVisible=false;saveChanges()" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save Changes</button>
                             </div>
 
                         </div>
 
-                        <!-- Add similar inputs for Title One, Slogan One, Image Two, Title Two, Slogan Two, Image Three, Title Three, Slogan Three -->
+                        
                     </div>
 
                 </div>
@@ -242,19 +242,38 @@
 
     
         </div>
-    
-        
-        
-        
-        
-        
-        
-        <!--why trust us section-->
-        
+        <div>
+            <div x-data="{ isEditorVisible: false, userRole: localStorage.getItem('userRole') }">
+                <button x-show="userRole === 'admin'" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" @click="isEditorVisible = !isEditorVisible">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+                
+                <div class="bg-green-500" x-show="isEditorVisible">
+                    <div h4="block_two"> 
+                        <div class="mb-6">
+                            <label class="block text-lg font-bold mb-2">Title</label>
+                            <input x-model="$store.home.block_two.title" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_two_title" type="text" placeholder="Title">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-lg font-bold mb-2">Body</label>
+                            <textarea x-model="$store.home.block_two.body" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_two_body" placeholder="Body"></textarea>
+                        </div>
+                        
+                    </div>
+
+                </div>
+            </div>
             <div class="container mx-auto">
                 <div class="grid lg:grid-cols-2 gap-6 my-8">
                     
+
+                    
                     <div class="relative">
+                        
+                            
+
+                        
+                        
                         <h4 x-text="$store.home.block_two.subtitle" class="text-sm text-green-500 "></h4>
                         <h2 x-text="$store.home.block_two.title" class="text-2xl text-green-700 font-bold  mt-2">
                             
@@ -273,6 +292,18 @@
                 </div>
             </div>
     
+
+        </div>
+    
+        
+        
+        
+        
+        
+        
+        <!--why trust us section-->
+        
+            
         
         
         <!--Yala-->
@@ -490,12 +521,11 @@
             // Hide the editor
             this.isEditorVisible = false;
         }
-            function loadData() {
-            // Retrieve content from local storage
+            function innit(){
+                // Retrieve content from local storage
              const savedContent = localStorage.getItem('content');
-
-            //bind content available in the local storgae if its saved
-            if (savedContent) {
+             //bind content available in the local storgae if its saved
+             if (savedContent) {
                 const parsedContent = JSON.parse(savedContent);
                 this.$store.home.block_one.title = parsedContent.block_one.title;
                 this.$store.home.block_one.body = parsedContent.block_one.body;
@@ -505,6 +535,11 @@
             }
         }
         window.addEventListener('load', loadData);
+
+                        
+
+            
+            
         
     
 
