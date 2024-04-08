@@ -27,13 +27,13 @@ document.addEventListener('alpine:init', () => {
             headerthree:"Image",
             animal:"Leopard",
             funfact:"Leopards can climb trees.",
-            img:"",
+            img:"/WDoS/images/leopardone.jpeg",
             animaltwo:"Elephants",
-            funfacttwo:"",
-            imgtwo:"",
+            funfacttwo:"they are very big,usually.",
+            imgtwo:"/WDoS/images/elephant.jpg",
             animalthree:"Mouse deer",
-            funfactthree:"",
-            imgthree:"",
+            funfactthree:"Mouse deers arent actually classified deers",
+            imgthree:"/WDoS/images/mouse-deer.jpeg",
 
         },
        
