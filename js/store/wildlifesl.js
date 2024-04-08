@@ -1,6 +1,10 @@
 document.addEventListener('alpine:init', () => {
     Alpine.store('wildlifesl', {
         is_editor_visible: false,
+        heading:{
+            title:"Places to visit:",
+
+        },
 
         block:{
             title:"Horton Plains",
