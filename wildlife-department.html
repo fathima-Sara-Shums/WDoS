@@ -12,7 +12,9 @@
   </head>
 
     <body class="bg-white">
-      <div id="_wildlifedept" x-data="_wildlifedept">
+      <div id="_wildlifedept" x-data="{}">
+        
+    
         <header class="bg-green-900" x-data="{ open: false }">
           <nav class="flex items-center justify-between px-4 lg:px-12 py-2 lg:py-4 bg-green-800">
             <!-- Logo -->
@@ -57,30 +59,54 @@
             
           
         </header>
+   
           
   
           <!-- Main container -->
+          
+        </div>
           <div class="container mx-auto px-4 py-8">
+            <div x-data="{ isEditorVisible: false, userRole: localStorage.getItem('userRole') }">
+              <button x-show="userRole === 'admin'" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" @click="isEditorVisible = !isEditorVisible">
+                  <i class="fa-solid fa-pen-to-square"></i>
+              </button>
+              
+              <div class="bg-green-500" x-show="isEditorVisible">
+                  <div h4="block_two"> 
+                      <div class="mb-6">
+                          <label class="block text-lg font-bold mb-2">Title</label>
+                          <input x-model="$store.wildlifedept.block.title" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_title" type="text" placeholder="Title">
+                      </div>
+                      <div class="mb-6">
+                          <label class="block text-lg font-bold mb-2">Body</label>
+                          <textarea x-model="$store.wildlifedept.block.body" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_body" placeholder="Body"></textarea>
+                      </div>
+                      <button @click=" isEditorVisible=false;saveChanges()" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save Changes</button>
+      
+                      
+                  </div>
+  
+              </div>
             <div class="bg-yellow-100">
               <!-- Introduction Section -->
               <section class="mb-12">
-                <h2 class="text-2xl font-bold text-green-900 mb-4">About the Department</h2>
-                <p class="text-black"></p>
+                <h2  x-text="$store.wildlifedept.block.title"  class="text-2xl font-bold text-green-900 mb-4"></h2>
+                <p x-text="$store.wildlifedept.block.body"  class="text-black"></p>
             </section>
     
             <!-- Gallery Section (using grid) -->
             <section class="mb-12">
-                <h2 class="text-2xl font-bold text-green-900 mb-4">Protected Areas Gallery</h2>
+                <h2 x-text="$store.wildlifedept.gallery.heading"  class="text-2xl font-bold text-green-900 mb-4"></h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                   <!-- Gallery items 1 -->
                   <div class="w-full">
-                    <img x-bind:src="$store.common.imageSrc($store.wildlifedept.gallery.imageone)" alt="Protected Area 1" class="w-full h-64 object-cover mb-2">
+                    <img x-bind:src="$store.wildlifedept.gallery.imageone" alt="Protected Area 1" class="w-full h-64 object-cover mb-2">
                     <h4 x-text="$store.wildlifedept.gallery.titleone" class="text-green-700"></h4>
                     <p x-text="$store.wildlifedept.gallery.infoone" class="text-green-500"></p>
                   </div>
                   <!-- Gallery items 2 -->
                   <div class="w-full">
-                    <img x-bind:src="$store.common.imageSrc($store.wildlifedept.gallery.imagetwo)" alt="Protected Area 2" class="w-full h-64 object-cover mb-2">
+                    <img x-bind:src="$store.wildlifedept.gallery.imagetwo" alt="Protected Area 2" class="w-full h-64 object-cover mb-2">
                     <h4 x-text="$store.wildlifedept.gallery.titletwo" class="text-green-700"> </h4>
                     <p x-text="$store.wildlifedept.gallery.infotwo" class="text-green-500"></p>
                   </div>
@@ -88,7 +114,7 @@
                   
                   <!--include 3 more items-->
                   <div class="w-full">
-                    <img x-bind:src="$store.common.imageSrc($store.wildlifedept.gallery.imagethree)" alt="Protected Area 3" class="w-full h-64 object-cover mb-2">
+                    <img x-bind:src="$store.wildlifedept.gallery.imagethree" alt="Protected Area 3" class="w-full h-64 object-cover mb-2">
                     <h4 x-text="$store.wildlifedept.gallery.titlethree" class="text-green-700"> </h4>
                     <p x-text="$store.wildlifedept.gallery.infothree" class="text-green-500"></p>
                   </div>
@@ -106,11 +132,13 @@
             <!-- Google Map Section -->
             <section>
               <div class="container">
-                <h2 class="text-2xl font-bold text-green-700 mb-4">Location</h2>
+                <h2 x-text="$store.wildlifedept.map.title" class="text-2xl font-bold text-green-700 mb-4"></h2>
                 <!-- You can embed your Google Map or use an iframe -->
                 <div class="w-full h-64 mb-4">
                     <!--include your Google Map embed code or iframe -->
-                    <iframe class="w-full"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1014239.6600704585!2d79.29467374687499!3d6.785224200000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3bdf9a5a54941%3A0xc4a5f756de2bc6f5!2sDepartment%20of%20Wildlife%20Conservation%20(Peak%20Wildness%20Range%20Office)!5e0!3m2!1sen!2slk!4v1705405738841!5m2!1sen!2slk" width="600"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        
+                       
+                        <iframe x-bind:href="$store.wildlifedept.map.link" class="w-full" width="600"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     
                   
                 </div>
