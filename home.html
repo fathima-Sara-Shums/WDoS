@@ -566,13 +566,15 @@
                 }
             };
 
+
             // Convert content to JSON and save to local storage
             localStorage.setItem('content', JSON.stringify(content));
+            loadData()
 
             // Hide the editor
             this.isEditorVisible = false;
         }
-            function innit(){
+            function loadData(){
                 // Retrieve content from local storage
              const savedContent = localStorage.getItem('content');
              //bind content available in the local storgae if its saved
