@@ -15,10 +15,10 @@
       <div id="_wildlifedept" x-data="{}">
         
     
-        <header class="bg-green-900" x-data="{ open: false }">
+        <header class="bg-green-900" x-data="{ open: false }" >
           <nav class="flex items-center justify-between px-4 lg:px-12 py-2 lg:py-4 bg-green-800">
             <!-- Logo -->
-            <img src="/WDoS/images/logo-no-background.png" alt="Wildlife SriLanka" class="w-64">
+            <img x-bind:src="$store.home.block_one.logo" alt="Wildlife SriLanka" class="w-64">
             
             <!-- Responsive Navigation -->
             <div x-data="{ open: false }" class="lg:hidden">
@@ -36,7 +36,7 @@
                         <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
                         <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
                         <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
-                     
+                        
                     </ul>
                 </div>
             </div>
@@ -50,9 +50,23 @@
                         <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
                         <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
                         <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
+                        <div x-data="{ isEditorVisible: false, userRole: localStorage.getItem('userRole') }" >
+                          <li x-show="userRole === 'admin'"class="text-white hover:text-yellow-200 py-2"><a href="dashboard.html">SUBCRIPTIONS</a></li>
+                        </div>
+                        <div id="_app" x-data="{}">
+
+
+                          <div x-show="$store.auth.user">
+                              
+                              <button class="bg-yellow-900 text-white px-4 py-2 rounded-md" style="display: block;" x-on:click="$store.auth.logout()">Logout</button>
+                          </div>
+                        
+                        
+                        
                         
                     
                 </ul>
+                
             </div>
         </nav>
         

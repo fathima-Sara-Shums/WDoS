@@ -15,233 +15,145 @@
     
     
 </head>
+
 <body>
- 
-    <!-- Header Section -->
-    <header class="bg-green-900" x-data="{ open: false }">
-      <nav class="flex items-center justify-between px-4 lg:px-12 py-2 lg:py-4 bg-green-800">
-        <!-- Logo -->
-        <img src="//WDoS/images/logo-no-background.png" alt="Wildlife SriLanka" class="w-64">
-        
-        <!-- Responsive Navigation -->
-        <div x-data="{ open: false }" class="lg:hidden">
-            <!-- Toggle Button for Mobile -->
-            <div @click="open = !open" class="cursor-pointer text-white">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-            
-            <!-- Mobile Menu -->
-            <div x-show="open" @click.away="open = false" class="absolute top-0 left-0 w-full bg-green-800 py-4">
-                <ul class="flex flex-col items-center">
-                    <li class="text-white hover:text-yellow-200 py-2"><a href="home.html">HOME</a></li>
-                    
-                    <li class="text-white hover:text-yellow-200 py-2"><a href="/WDoS/wildlife-department.html">ABOUT US</a></li>
-                    <li class="text-white hover:text-yellow-200 py-2"><a href="/WDoS/wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
-                    <li class="text-white hover:text-yellow-200 py-2"><a href="/WDoS/srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
-                    <li class="text-white hover:text-yellow-200 py-2"><a href="/WDoS/the-animals.html">THE ANIMALS</a></li>
-                    <li class="text-white hover:text-yellow-200 py-2"><a href="/WDoS/Contact-us.html">CONTACT US</a></li>
-                </ul>
-            </div>
-        </div>
-    
-        <!-- Desktop Navigation -->
-        <div class="hidden lg:flex flex-col lg:flex-row lg:items-center">
-            <ul class="flex flex-col lg:flex-row lg:gap-8">
-              <li class="text-white hover:text-yellow-200 py-2"><a href="home.html">HOME</a></li>
-                    
-                    <li class="text-white hover:text-yellow-200 py-2"><a href="/WDoS/wildlife-department.html">ABOUT US</a></li>
-                    <li class="text-white hover:text-yellow-200 py-2"><a href="/WDoS/wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
-                    <li class="text-white hover:text-yellow-200 py-2"><a href="/WDoS/srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
-                    <li class="text-white hover:text-yellow-200 py-2"><a href="/WDoS/the-animals.html">THE ANIMALS</a></li>
-                    <li class="text-white hover:text-yellow-200 py-2"><a href="/WDoS/Contact us.html">CONTACT US</a></li>
-                
-            </ul>
-        </div>
-    </nav>
-    
-        
+  <header class="bg-green-900" x-data="{ open: false }" >
+    <nav class="flex items-center justify-between px-4 lg:px-12 py-2 lg:py-4 bg-green-800">
+      <!-- Logo -->
+      <img src="/WDoS/images/logo-no-background" alt="Wildlife SriLanka" class="w-64">
       
-    </header>
-    
-   
-
-    <!-- Main Content Section -->
-    
-    
-      
-      
-    
-      <!-- About Section -->
-      <section id="about" class="mb-8 bg-yellow-100">
-          <h2 class="text-2xl font-bold mb-4 text-green-900">Yala National Park</h2>
-          <div class="grid md:grid-cols-2">
-            <div>
-              <p class=""> Yala (යාල/யாலா தேசிய பூங்கா) National Park is a mesmerizing haven for wildlife enthusiasts, situated in the southeastern region of Sri Lanka, bordering the Indian Ocean. Covering an expansive 979 square kilometers, Yala is the most visited and second-largest national park in the country.
-
-                The park comprises five distinct blocks, with three open to the public. Notable among these are Palatupana (Block 1), Kumana National Park, also known as 'Yala East,' and Lunugamvehera National Park. Its strategic location, approximately 300 kilometers from Colombo, makes it easily accessible for nature lovers.
-        
-                Designated as a wildlife sanctuary in 1900, alongside Wilpattu, Yala has been a pioneer in wildlife conservation in Sri Lanka. Renowned for its incredible biodiversity, the park is a crucial habitat for Sri Lankan elephants, Sri Lankan leopards, and a plethora of aquatic bird species.
-        
-                Explore the diverse landscapes within Yala National Park, from lush forests to arid plains, and witness the coexistence of a wide array of flora and fauna. The park's significance extends beyond its scenic beauty, as it plays a pivotal role in the conservation of endangered species and the preservation of Sri Lanka's rich natural heritage..</p>
-              
-            </div>
-            <div>
-              <!--iframe locaton-->
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.2390598342618!2d81.4235964740457!3d6.491384923537665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae683b969aec5c7%3A0x7e3aa2da875d927e!2sYala%20National%20Park%20Sri%20Lanka!5e0!3m2!1sen!2slk!4v1705477185395!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-         
-            </div>
+      <!-- Responsive Navigation -->
+      <div x-data="{ open: false }" class="lg:hidden">
+          <!-- Toggle Button for Mobile -->
+          <div @click="open = !open" class="cursor-pointer text-white">
+              <i class="fa-solid fa-bars"></i>
           </div>
           
-      </section>
-      <!--animation-->
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-            
-            <div class="swiper-slide">
-                <img src="/WDoS/images/yala-suduwelimulla.webp" alt="Leopard in Yala National Park" class="w-full h-64 object-cover">
-            </div>
-            <div class="swiper-slide">
-              <img src="/WDoS/images/yala-deer.jpeg" alt="Yala National Park" class="w-full h-64 object-cover">
-            </div>
-            <div class="swiper-slide">
-              <img src="/WDoS/images/mouse-deer.jpeg" alt="Yala National Park" class="w-full h-64 object-cover">
-            </div>
-            
-        </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-     </div>
-      <section>
-        <!--tips-->
-        <ul class="list-disc list-inside  p-8 space-y-4 bg-yellow-100">
-          <h3 class="font-mono text-green-800">USEFUL TIPS</h3>
-          <div class="grid md:grid-cols-2 ">
-            
-            <div>
-              <li x-model="$store.yalanp.tips.tip" class="font-bold"></li>
-            
-              <li class="font-bold">Visit During the Dry Season:</li>
-            
-              <li class="font-bold">Choose the Right Safari Duration:</li>
-            
-    
-              <li class="font-bold">Respect Wildlife and Their Habitat:</li>
-              
-    
-              <li class="font-bold">Follow Park Regulations:</li>
-            </div>
-  
-            
-            <div>
-              <li class="font-bold">Wear Appropriate Clothing:</li>
-            
-    
-              <li class="font-bold">Stay Hydrated and Carry Snacks:</li>
-            
-    
-              <li class="font-bold">Pack Binoculars and a Camera:</li>
-            
-    
-              <li class="font-bold">Arrive Early for Better Wildlife Sightings:</li>
-            
-    
-              <li class="font-bold">Engage with Knowledgeable Guides:</li>
-  
-            </div>
-
-          </div>
-          
-  
-          
-          
-      </ul>
-      
-      </section>
-    
-
-
-    
-      
-
-      <!-- Gallery Section -->
-      <section id="gallery">
-          <h2 class="text-green-700 font-bold mb-4">Animals there:</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <!-- image1 -->
-              <img src="/WDoS/images/yala-deer.jpeg" alt="yala 1 " class="w-full h-64  md:h-256 object-cover mb-2">
-              <!-- Image 2 -->
-              <img src="/WDoS/images/yala-leopard.jpg" alt="yala 2" class="w-full h-64 object-cover mb-2">
-              <!--image 3-->
-              <img src="/WDoS/images/yalap.jpeg" alt="peacock" class="w-full h-64 object-cover mb-2" >
-              
-          </div>
-          
-      </section>
-
-
-
-
-    
-
-    </main>
-    <script>
-      const toggleBtn= document.querySelector(".toggle-button");
-      const dropdown=document.querySelector(".dropdown-menu");
-
-      toggleBtn.addEventListener("click",()=>{
-        dropdown.classList.toggle('top-16');
-      })
-    </script>
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-    </script>
-    <!-- Footer Section -->
-    <footer class="bg-green-800 text-white w-full">
-      <div class="flex flex-col md:flex-row justify-between">
-    
-          <!-- Logo -->
-          <div class="mb-4 md:mb-0 ">
-              <img src="/WDoS/images/logo-no-background.png" alt="Your Logo" class="w-64 h-auto">
-              
-              <p class="mb-2">Phone: <a href="tel:+123456789" class="text-green-300">+1 (234) 567-89</a></p>
-          </div>
-          <div class="mt-4 md:mt-0">
-            <h4>Follow us:</h4>
-            <ul>
-                <li><a href="https://facebook.com/yourpage" target="_blank" ><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a href="https://www.instagram.com/" target="_blank" ></a><i class="fa-brands fa-instagram"></i></li>
-                
+          <!-- Mobile Menu -->
+          <div x-show="open" @click.away="open = false" class="absolute top-0 left-0 w-full bg-green-800 py-4">
+              <ul class="flex flex-col items-center">
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="home.html">HOME</a></li>
+                  
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
+                  
               </ul>
-            
-            
-            
-        </div>
+          </div>
+      </div>
+  
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex flex-col lg:flex-row lg:items-center">
+          <ul class="flex flex-col lg:flex-row lg:gap-8">
+            <li class="text-white hover:text-yellow-200 py-2"><a href="home.html">HOME</a></li>
+                  
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
+                  <div x-data="{ isEditorVisible: false, userRole: localStorage.getItem('userRole') }" >
+                    <li x-show="userRole === 'admin'"class="text-white hover:text-yellow-200 py-2"><a href="dashboard.html">SUBCRIPTIONS</a></li>
+                  </div>
+                  <div id="_app" x-data="{}">
+
+
+                    <div x-show="$store.auth.user">
+                        
+                        <button class="bg-yellow-900 text-white px-4 py-2 rounded-md" style="display: block;" x-on:click="$store.auth.logout()">Logout</button>
+                    </div>
+                  
+                  
+                  
+                  
+              
+          </ul>
+          
+      </div>
+  </nav>
+  
+      
     
-          <!-- Quick Links -->
-          <div class="flex flex-col  space-y-2 md:space-y-0 md:space-x-4">
-            <h4>Quick links:</h4>
-            <ul class="flex flex-col items-center">
-                <li class="text-white hover:text-yellow-200 py-2"><a href="home.html">HOME</a></li>
-                
-                <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
-                <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
-                <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
-                <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
-                
-            </ul>
+  </header>
+  <div id="_yala" x-data="_yala" >
+     <!-- About Section -->
+     <div id="about" class="mb-8 bg-yellow-100">
+      <h2 class="text-2xl font-bold mb-4 text-green-900">Yala National Park</h2>
+      <div class="grid md:grid-cols-2">
+        <div>
+          <p class=""> Yala (යාල/யாலா தேசிய பூங்கா) National Park is a mesmerizing haven for wildlife enthusiasts, situated in the southeastern region of Sri Lanka, bordering the Indian Ocean. Covering an expansive 979 square kilometers, Yala is the most visited and second-largest national park in the country.
+
+            The park comprises five distinct blocks, with three open to the public. Notable among these are Palatupana (Block 1), Kumana National Park, also known as 'Yala East,' and Lunugamvehera National Park. Its strategic location, approximately 300 kilometers from Colombo, makes it easily accessible for nature lovers.
+    
+            Designated as a wildlife sanctuary in 1900, alongside Wilpattu, Yala has been a pioneer in wildlife conservation in Sri Lanka. Renowned for its incredible biodiversity, the park is a crucial habitat for Sri Lankan elephants, Sri Lankan leopards, and a plethora of aquatic bird species.
+    
+            Explore the diverse landscapes within Yala National Park, from lush forests to arid plains, and witness the coexistence of a wide array of flora and fauna. The park's significance extends beyond its scenic beauty, as it plays a pivotal role in the conservation of endangered species and the preservation of Sri Lanka's rich natural heritage..</p>
+          
+        </div>
+        <div>
+          <!--iframe locaton-->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.2390598342618!2d81.4235964740457!3d6.491384923537665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae683b969aec5c7%3A0x7e3aa2da875d927e!2sYala%20National%20Park%20Sri%20Lanka!5e0!3m2!1sen!2slk!4v1705477185395!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <!--animation-->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+              
+              <div class="swiper-slide">
+                  <img src="/WDoS/images/yala-suduwelimulla.webp" alt="Leopard in Yala National Park" class="w-full h-64 object-cover">
+              </div>
+              <div class="swiper-slide">
+                <img src="/WDoS/images/yala-deer.jpeg" alt="Yala National Park" class="w-full h-64 object-cover">
+              </div>
+              <div class="swiper-slide">
+                <img src="/WDoS/images/mouse-deer.jpeg" alt="Yala National Park" class="w-full h-64 object-cover">
+              </div>
               
           </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+       </div>
+        <div>
+          <!--tips-->
+          <ul class="list-disc list-inside  p-8 space-y-4 bg-yellow-100">
+            <h3 class="font-mono text-green-800">USEFUL TIPS</h3>
+            <div class="grid md:grid-cols-2 ">
+              
+              <div>
+                <li x-model="$store.yalanp.tips.tip" class="font-bold"></li>
+              
+                <li class="font-bold">Visit During the Dry Season:</li>
+              
+                <li class="font-bold">Choose the Right Safari Duration:</li>
+              
+      
+                <li class="font-bold">Respect Wildlife and Their Habitat:</li>
+                
+      
+                <li class="font-bold">Follow Park Regulations:</li>
+              </div>
     
-          
+              
+              <div>
+                <li class="font-bold">Wear Appropriate Clothing:</li>
+              
+      
+                <li class="font-bold">Stay Hydrated and Carry Snacks:</li>
+              
+      
+                <li class="font-bold">Pack Binoculars and a Camera:</li>
+              
+      
+                <li class="font-bold">Arrive Early for Better Wildlife Sightings:</li>
+              
+      
+                <li class="font-bold">Engage with Knowledgeable Guides:</li>
     
-      </div>
-    </footer>
+              </div>
+        </div>
+  
+
+  </div>
+ 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="js/store/yalanp.js"></script>
     <script type="text/javascript" src="js/app.js"></script>

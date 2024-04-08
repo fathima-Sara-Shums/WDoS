@@ -48,7 +48,7 @@
                     <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
                     <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
                     <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
-                    <div x-data="{ isAdmin: false ,isEditorVisible: false, userRole: localStorage.getItem('userRole') }" x-init="isAdmin = localStorage.getItem('isAdmin') === 'true'">
+                    <div x-data="{ isEditorVisible: false, userRole: localStorage.getItem('userRole') }" >
                       <li x-show="userRole === 'admin'"class="text-white hover:text-yellow-200 py-2"><a href="dashboard.html">SUBCRIPTIONS</a></li>
                     </div>
                     <div id="_app" x-data="{}">
