@@ -138,14 +138,14 @@
                     <div class="bg-white md:grid md:grid-cols-4 md:gap-6 shadow overflow-hidden sm:rounded-md">
                         <div class="text-lg font-bold text-green-700 md:text-center">
                             <h4 x-text="$store.wildlifesl.block.title"></h4> 
-                            <img src="/WDoS/images/hortainplains.jpg" alt="">
+                            <img src="" alt="">
                         </div>
                         
                         <div class="prose">               
                             <p x-text="$store.wildlifesl.block.body"></p>
                         </div>
                         <div class="col-span-2" >
-                            <iframe class="p-8 mb-12"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.6739945880977!2d80.79975837404777!3d6.809451319776278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3882edb4b78ef%3A0xcebca89153777249!2sHorton%20Plains%20National%20Park!5e0!3m2!1sen!2slk!4v1705505655350!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe x-bind:src="$store.wildlifesl.block.map" class="p-8 mb-12" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
     
@@ -153,14 +153,14 @@
                     <div class="bg-white md:grid md:grid-cols-4 md:gap-6 shadow overflow-hidden sm:rounded-md">
                         <div class="text-lg font-bold text-green-700 md:text-center">
                             <h4 x-text="$store.wildlifesl.blocktwo.title"></h4>
-                            <img src="/WDoS/images/udawalaweelephants.jpg" alt="">
+                            <img src="" alt="">
                         </div>
                         
                         <div class="prose">               
                             <p x-text="$store.wildlifesl.blocktwo.body"> </p>
                         </div>
                         <div class="col-span-2">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.370762013656!2d80.87374407404556!3d6.474634123731256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae408ff88887e79%3A0xaf12e79ffbd980d7!2sUdawalawe%20National%20Park!5e0!3m2!1sen!2slk!4v1705544017521!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe x-bind:src="$store.wildlifesl.blocktwo.map"   width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                         
                     </div>
@@ -169,7 +169,7 @@
                     <div class="bg-white md:grid md:grid-cols-4 md:gap-6 shadow overflow-hidden sm:rounded-md">
                         <div class="text-lg font-bold text-green-700 md:text-center">
                             <h4 x-text="$store.wildlifesl.blockthree.title"></h4>
-                            <img src="/WDoS/images/croc.webp" alt="croc">
+                            <img src="" alt="croc">
                         </div>
                         
                         <div class="prose">               
@@ -177,7 +177,7 @@
                         </div>
                         <div class="col-span-2">
 
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.370762013656!2d80.87374407404556!3d6.474634123731256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae408ff88887e79%3A0xaf12e79ffbd980d7!2sUdawalawe%20National%20Park!5e0!3m2!1sen!2slk!4v1705544017521!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe x-bind:src="$store.wildlifesl.blockthree.map"   width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                         
                     </div>
@@ -225,50 +225,94 @@
                 </div>
             </div>
             <!-- Footer Section -->
-          <footer class="bg-green-800 text-white w-full">
-            <div class="flex flex-col md:flex-row justify-between">
-    
-                <!-- Logo -->
-                <div class="mb-4 md:mb-0 ">
-                    <img src="/WDoS/images/logo-no-background.png" alt="Your Logo" class="w-64 h-auto">
-                    
-                    <p class="mb-2">Phone: <a href="tel:+123456789" class="text-green-300">+1 (234) 567-89</a></p>
+            <footer class="bg-green-800 text-white w-full">
+                <div class="flex flex-col md:flex-row justify-between">
+      
+                    <!-- Logo -->
+                    <div class="mb-4 md:mb-0 ">
+                        <img src="images/logo-no-background.png" alt="Your Logo" class="w-64 h-auto">
+                        
+                        <p class="mb-2">Phone: <a href="tel:+123456789" class="text-green-300">+1 (234) 567-89</a></p>
+                    </div>
+                    <div class="newsletter" x-data="{ email: '', subscribe() {
+                      // Retrieve the email from Alpine.js component state
+                      const email = this.email;
+                
+                      // Check if the email is already subscribed
+                      const subscribedEmails = JSON.parse(localStorage.getItem('subscribedEmails')) || [];
+                      if (subscribedEmails.includes(email)) {
+                        alert('You are already subscribed!');
+                        return;
+                      }
+                
+                      // Add the email to the list of subscribed emails
+                      subscribedEmails.push(email);
+                      localStorage.setItem('subscribedEmails', JSON.stringify(subscribedEmails));
+                
+                      // Show a success message
+                      alert('Thank you for subscribing!');
+                    } }">
+                    <div x-data="{ userRole: localStorage.getItem('userRole') }">
+                      <div x-show="userRole !== 'admin'" >
+                          <h2 class="text-yellow-700">Subscribe to Our Newsletter</h2>
+                          <form @submit.prevent="subscribe">
+                              <input class="text-black" type="email" x-model="email" placeholder="Enter your email" required>
+                              <button class="bg-yellow-900 text-white px-4 py-2 rounded-md" type="submit">Subscribe</button>
+                      </form>
+                      </div>
+                      
+  
+  
+                    </div>
+  
+  
+  
+                         
+                      
+                      
+  
+                  </div>
+                  
                 </div>
-                <div class="mt-4 md:mt-0">
-                  <h4>Follow us:</h4>
-                  <ul>
-                      <li><a href="https://facebook.com/yourpage" target="_blank" ><i class="fa-brands fa-facebook"></i></a></li>
-                      <li><a href="https://www.instagram.com/" target="_blank" ></a><i class="fa-brands fa-instagram"></i></li>
-                      
-                    </ul>
-                  
-                  
-                  
-              </div>
-    
-                <!-- Quick Links -->
-                <div class="flex flex-col  space-y-2 md:space-y-0 md:space-x-4">
-                  <h4>Quick links:</h4>
-                  <ul class="flex flex-col items-center">
-                      <li class="text-white hover:text-yellow-200 py-2"><a href="home.html">HOME</a></li>
-                      
-                      <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
-                      <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
-                      <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
-                      <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
-                      
-                  </ul>
+  
+          
                     
+                
+                    
+                      
+                    
+                    <div class="mt-4 md:mt-0">
+                      <h4>Follow us:</h4>
+                      <ul>
+                          <li><a href="https://facebook.com/yourpage" target="_blank" ><i class="fa-brands fa-facebook"></i></a></li>
+                          <li><a href="https://www.instagram.com/" target="_blank" ></a><i class="fa-brands fa-instagram"></i></li>
+                          
+                        </ul>
+                      
+                      
+                      
+                  </div>
+      
+                    <!-- Quick Links -->
+                    <div class="flex flex-col  space-y-2 md:space-y-0 md:space-x-4">
+                      <h4>Quick links:</h4>
+                      <ul class="flex flex-col items-center">
+                          <li class="text-white hover:text-yellow-200 py-2"><a href="/">HOME</a></li>
+                          
+                          <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
+                          <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
+                          <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
+                          <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
+                          
+                      </ul>
+                        
+                    </div>
+      
+                    
+                    
+      
                 </div>
-    
-
-    </div>
-    
-            
-            
-
-        </div>
-    </footer>
+            </footer>
         
         <!--header navigaton-->
         <script>
