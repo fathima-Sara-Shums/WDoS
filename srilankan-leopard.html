@@ -84,18 +84,36 @@
           <div class="mb-6">
               <label class="block text-lg font-bold mb-2">Body</label>
               <textarea x-model="$store.slleopard.details.title" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_one_body" placeholder="Body"></textarea>
-          </div>
+              <label class="block text-lg font-bold mb-2">components</label>
+              <input x-model="$store.slleopard.details.locationone"class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="home_summaryview_imageone" type="text" placeholder="title one">
+              <input x-model="$store.slleopard.details.locationtwo"class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="home_summaryview_imageone" type="text" placeholder="title one">
+              <input x-model="$store.slleopard.details.locationthree"class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="home_summaryview_imageone" type="text" placeholder="title one">
+
+          
+          
+          
+            </div>
           <!-- Summary -->
           <div class="mb-6">
-              <label class="block text-lg font-bold mb-2">Summary View</label>
+              <label class="block text-lg font-bold mb-2">Two items</label>
+
               <!-- Image One -->
               <div class="mb-4">
-                  <label class="block text-lg font-bold">Image One</label>
-                  <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="home_summaryview_imageone" type="text" placeholder="Image URL">
+                  <label class="block text-lg font-bold">item one</label>
+                  <input x-model="$store.slleopard.threat_one.title"class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="home_summaryview_imageone" type="text" placeholder="title one">
+                  <input x-model="$store.slleopard.threat_one.body"class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="home_summaryview_imageone" type="text" >
+                </div>
+              <div class="mb-4">
+                <label class="block text-lg font-bold">Item two</label>
+                <input x-model="$store.slleopard.threat_two.title"class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="home_summaryview_imageone" type="text" >
+                <input x-model="$store.slleopard.threat_two.body"class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="home_summaryview_imageone" type="text" >
               </div>
               <!-- Add similar inputs for Title One, Slogan One, Image Two, Title Two, Slogan Two, Image Three, Title Three, Slogan Three -->
           </div>
+        
+          <button @click=" isEditorVisible=false;saveChanges()" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save Changes</button>
       </div>
+      
       </div>
 
 
@@ -162,6 +180,7 @@
   
                 </div>
               </div>
+
            
   
           
@@ -261,6 +280,27 @@
       </div>
   </footer>
   </div>
+  <script>
+    function subscribe() {
+      // Retrieve the email from the form
+      const email = this.email;
+  
+      // Check if the email is already subscribed
+      const subscribedEmails = JSON.parse(localStorage.getItem('subscribedEmails')) || [];
+      if (subscribedEmails.includes(email)) {
+        alert('You are already subscribed!');
+        return;
+      }
+  
+      // Add the email to the list of subscribed emails
+      subscribedEmails.push(email);
+      localStorage.setItem('subscribedEmails', JSON.stringify(subscribedEmails));
+  
+      // Show a success message
+      alert('Thank you for subscribing!');
+    }
+    
+</script>
   
   <script>
     const toggleBtn= document.querySelector(".toggle-button");
