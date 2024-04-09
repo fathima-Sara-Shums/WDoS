@@ -75,13 +75,13 @@
       
     
   </header>
-  <div id="_yala" x-data="_yala" >
+  <div id="_yala" x-data={}>
      <!-- About Section -->
      <div id="about" class="mb-8 bg-yellow-100">
-      <h2 class="text-2xl font-bold mb-4 text-green-900">Yala National Park</h2>
+      <h2 x-text="$store.yalanp.main.title"class="text-2xl font-bold mb-4 text-green-900"></h2>
       <div class="grid md:grid-cols-2">
         <div>
-          <p class=""> Yala (යාල/யாலா தேசிய பூங்கா) National Park is a mesmerizing haven for wildlife enthusiasts, situated in the southeastern region of Sri Lanka, bordering the Indian Ocean. Covering an expansive 979 square kilometers, Yala is the most visited and second-largest national park in the country.
+          <p x-text="$store.yalanp.main.body "class=""> Yala (යාල/யாலா தேசிய பூங்கா) National Park is a mesmerizing haven for wildlife enthusiasts, situated in the southeastern region of Sri Lanka, bordering the Indian Ocean. Covering an expansive 979 square kilometers, Yala is the most visited and second-largest national park in the country.
 
             The park comprises five distinct blocks, with three open to the public. Notable among these are Palatupana (Block 1), Kumana National Park, also known as 'Yala East,' and Lunugamvehera National Park. Its strategic location, approximately 300 kilometers from Colombo, makes it easily accessible for nature lovers.
     
@@ -241,6 +241,27 @@
 
     </div>
 </footer>
+<script>
+  function subscribe() {
+    // Retrieve the email from the form
+    const email = this.email;
+
+    // Check if the email is already subscribed
+    const subscribedEmails = JSON.parse(localStorage.getItem('subscribedEmails')) || [];
+    if (subscribedEmails.includes(email)) {
+      alert('You are already subscribed!');
+      return;
+    }
+
+    // Add the email to the list of subscribed emails
+    subscribedEmails.push(email);
+    localStorage.setItem('subscribedEmails', JSON.stringify(subscribedEmails));
+
+    // Show a success message
+    alert('Thank you for subscribing!');
+  }
+  
+</script>
  
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="js/store/yalanp.js"></script>
