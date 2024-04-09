@@ -10,7 +10,7 @@ document.addEventListener('alpine:init', () => {
            
         },
         summary_view:{
-            imageone:"/images/yala-suduwelimulla.webp",
+            imageone:"/WDoS/images/leopardone.jpeg",
             titleone:"Leopards",
             sloganone:"Sri Lanka's stealthy royalty: Spot the elusive leopard, king of the island's jungles.",
             imagetwo:"images/wilpattu-national-park.jpeg",
@@ -35,7 +35,7 @@ document.addEventListener('alpine:init', () => {
             title:"Yala",
             subtitle:" Explore",
             body:"Without question Sri Lanka's most popular national park, Yala is situated about 260 km southeast of Colombo. Officially designated as a national park on 1st March 1938, Yala spans an impressive 978.807 km2. It's located along Sri Lanka's southern coast, overlapping Uva and the Southern Province.",
-            image:"/WDoS/images/peacock.jpeg",
+            image:"/WDoS/images/wilpattu-monkey.jpg",
             link:"/yala.html",
 
         },
