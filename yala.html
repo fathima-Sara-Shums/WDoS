@@ -1,245 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>yala</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>yala</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/alpine.js" defer></script>
-
-    
-    
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="//unpkg.com/alpinejs" defer></script>
     
 </head>
-
 <body>
-  <header class="bg-green-900" x-data="{ open: false }" >
-    <nav class="flex items-center justify-between px-4 lg:px-12 py-2 lg:py-4 bg-green-800">
-      <!-- Logo -->
-      <img src="/WDoS/images/logo-no-background" alt="Wildlife SriLanka" class="w-64">
-      
-      <!-- Responsive Navigation -->
-      <div x-data="{ open: false }" class="lg:hidden">
-          <!-- Toggle Button for Mobile -->
-          <div @click="open = !open" class="cursor-pointer text-white">
-              <i class="fa-solid fa-bars"></i>
-          </div>
-          
-          <!-- Mobile Menu -->
-          <div x-show="open" @click.away="open = false" class="absolute top-0 left-0 w-full bg-green-800 py-4">
-              <ul class="flex flex-col items-center">
-                  <li class="text-white hover:text-yellow-200 py-2"><a href="home.html">HOME</a></li>
-                  
-                  <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
-                  <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
-                  <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
-                  <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
-                  
-              </ul>
-          </div>
-      </div>
   
-      <!-- Desktop Navigation -->
-      <div class="hidden lg:flex flex-col lg:flex-row lg:items-center">
-          <ul class="flex flex-col lg:flex-row lg:gap-8">
-            <li class="text-white hover:text-yellow-200 py-2"><a href="home.html">HOME</a></li>
-                  
-                  <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
-                  <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
-                  <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
-                  <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
-                  <div x-data="{ isEditorVisible: false, userRole: localStorage.getItem('userRole') }" >
-                    <li x-show="userRole === 'admin'"class="text-white hover:text-yellow-200 py-2"><a href="dashboard.html">SUBCRIPTIONS</a></li>
-                  </div>
-                  <div id="_app" x-data="{}">
-
-
-                    <div x-show="$store.auth.user">
-                        
-                        <button class="bg-yellow-900 text-white px-4 py-2 rounded-md" style="display: block;" x-on:click="$store.auth.logout()">Logout</button>
-                    </div>
-                  
-                  
-                  
-                  
-              
-          </ul>
-          
-      </div>
-  </nav>
   
-      
     
-  </header>
-  <div id="_yala" x-data={}>
-     <!-- About Section -->
-     <div id="about" class="mb-8 bg-yellow-100">
-      <h2 x-text="$store.yalanp.main.title"class="text-2xl font-bold mb-4 text-green-900"></h2>
-      <div class="grid md:grid-cols-2">
-        <div>
-          <p x-text="$store.yalanp.main.body "class=""> Yala (යාල/யாலா தேசிய பூங்கா) National Park is a mesmerizing haven for wildlife enthusiasts, situated in the southeastern region of Sri Lanka, bordering the Indian Ocean. Covering an expansive 979 square kilometers, Yala is the most visited and second-largest national park in the country.
 
-            The park comprises five distinct blocks, with three open to the public. Notable among these are Palatupana (Block 1), Kumana National Park, also known as 'Yala East,' and Lunugamvehera National Park. Its strategic location, approximately 300 kilometers from Colombo, makes it easily accessible for nature lovers.
     
-            Designated as a wildlife sanctuary in 1900, alongside Wilpattu, Yala has been a pioneer in wildlife conservation in Sri Lanka. Renowned for its incredible biodiversity, the park is a crucial habitat for Sri Lankan elephants, Sri Lankan leopards, and a plethora of aquatic bird species.
-    
-            Explore the diverse landscapes within Yala National Park, from lush forests to arid plains, and witness the coexistence of a wide array of flora and fauna. The park's significance extends beyond its scenic beauty, as it plays a pivotal role in the conservation of endangered species and the preservation of Sri Lanka's rich natural heritage..</p>
-          
-        </div>
-        <div>
-          <!--iframe locaton-->
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.2390598342618!2d81.4235964740457!3d6.491384923537665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae683b969aec5c7%3A0x7e3aa2da875d927e!2sYala%20National%20Park%20Sri%20Lanka!5e0!3m2!1sen!2slk!4v1705477185395!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        <!--animation-->
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-              
-              <div class="swiper-slide">
-                  <img src="/WDoS/images/yala-suduwelimulla.webp" alt="Leopard in Yala National Park" class="w-full h-64 object-cover">
-              </div>
-              <div class="swiper-slide">
-                <img src="/WDoS/images/yala-deer.jpeg" alt="Yala National Park" class="w-full h-64 object-cover">
-              </div>
-              <div class="swiper-slide">
-                <img src="/WDoS/images/mouse-deer.jpeg" alt="Yala National Park" class="w-full h-64 object-cover">
-              </div>
-              
-          </div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-       </div>
-        <div>
-          <!--tips-->
-          <ul class="list-disc list-inside  p-8 space-y-4 bg-yellow-100">
-            <h3 class="font-mono text-green-800">USEFUL TIPS</h3>
-            <div class="grid md:grid-cols-2 ">
-              
-              <div>
-                <li x-model="$store.yalanp.tips.tip" class="font-bold"></li>
-              
-                <li class="font-bold">Visit During the Dry Season:</li>
-              
-                <li class="font-bold">Choose the Right Safari Duration:</li>
-              
-      
-                <li class="font-bold">Respect Wildlife and Their Habitat:</li>
+        <!-- Header Section -->
+        <header class="bg-green-900" x-data="{ open: false }" >
+          <nav class="flex items-center justify-between px-4 lg:px-12 py-2 lg:py-4 bg-green-800">
+            <!-- Logo -->
+            <img src="/WDoS/images/logo-no-background.png" alt="Wildlife SriLanka" class="w-64">
+            
+            <!-- Responsive Navigation -->
+            <div x-data="{ open: false }" class="lg:hidden">
+                <!-- Toggle Button for Mobile -->
+                <div @click="open = !open" class="cursor-pointer text-white">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
                 
-      
-                <li class="font-bold">Follow Park Regulations:</li>
-              </div>
+                <!-- Mobile Menu -->
+                <div x-show="open" @click.away="open = false" class="absolute top-0 left-0 w-full bg-green-800 py-4">
+                    <ul class="flex flex-col items-center">
+                        <li class="text-white hover:text-yellow-200 py-2"><a href="home.html">HOME</a></li>
+                        
+                        <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
+                        <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
+                        <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
+                        <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+            <!-- Desktop Navigation -->
+            <div class="hidden lg:flex flex-col lg:flex-row lg:items-center">
+                <ul class="flex flex-col lg:flex-row lg:gap-8">
+                  <li class="text-white hover:text-yellow-200 py-2"><a href="home.html">HOME</a></li>
+                        
+                        <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
+                        <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
+                        <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
+                        <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
+                        <div x-data="{ isEditorVisible: false, userRole: localStorage.getItem('userRole') }" >
+                          <li x-show="userRole === 'admin'"class="text-white hover:text-yellow-200 py-2"><a href="dashboard.html">SUBCRIPTIONS</a></li>
+                        </div>
+                        <div id="_app" x-data="{}">
+
+
+                          <div x-show="$store.auth.user">
+                              
+                              <button class="bg-yellow-900 text-white px-4 py-2 rounded-md" style="display: block;" x-on:click="$store.auth.logout()">Logout</button>
+                          </div>
+                        
+                        
+                        
+                        
+                    
+                </ul>
+                
+            </div>
+        </nav>
+        
+            
+          
+        </header>
+        <div id="_yalanp" x-data="{}">
+          <div x-data="{ isEditorVisible: false, userRole: localStorage.getItem('userRole') }"  >
+            <button x-show="userRole === 'admin'" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" @click="isEditorVisible = !isEditorVisible">
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <div class="bg-green-500" x-show="isEditorVisible">
+              <div h4="block_two"> 
+                <div class="mb-6">
+                    <label class="block text-lg font-bold mb-2">Title</label>
+                    <input x-model="$store.yalanp.main.title" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_title" type="text" placeholder="Title">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-lg font-bold mb-2">Body</label>
+                    <textarea x-model="$store.yalanp.main.body" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_body" placeholder="Body"></textarea>
+                </div>
+                <button @click=" isEditorVisible=false;saveChanges()" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save Changes</button>
+        
+                
+            </div>
+            </div>
+        
+          </div>
+          <!-- Main Content Section -->
+          <main class="container mx-auto py-8">
     
-              
-              <div>
-                <li class="font-bold">Wear Appropriate Clothing:</li>
-              
-      
-                <li class="font-bold">Stay Hydrated and Carry Snacks:</li>
-              
-      
-                <li class="font-bold">Pack Binoculars and a Camera:</li>
-              
-      
-                <li class="font-bold">Arrive Early for Better Wildlife Sightings:</li>
-              
-      
-                <li class="font-bold">Engage with Knowledgeable Guides:</li>
+            
+            
+            
+            <!-- About Section -->
+                <div class="grid md:grid-cols-2 bg-yellow-100">
+                  <h3 x-text="$store.yalanp.main.title" class="text-2xl font-bold mb-4"></h3>
+                  <div>
+                    <p x-text="$store.yalanp.main.body"  class="text-green-700"></p>
+                  </div>
+                  <div>
+                    <!--iframe locaton-->
+                    <iframe x-bind:src="$store.yalanp.main.map" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  </div>
+                </div>
+                
+            </section>
+            
+            
+               
+               
     
-              </div>
+          
+            
+    
+            <!-- Gallery Section -->
+            <section id="gallery">
+                <h2 x-text="$store.yalanp.gallery.topic"class="text-green-700 font-bold mb-4"></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- image1 -->
+                    <img src="/WDoS/images/fishing-cat.webp" alt="yala Gallery 1" class="w-full h-48 object-cover mb-2">
+                    <!-- Image 2 -->
+                    <img src="/WDoS/images/centralhighlads.jpg" alt="yala Gallery 2" class="w-full h-48 object-cover mb-2">
+                    <!-- Image 3 -->
+                    <img src="" class="w-full h-48 object-cover mb-2">
+
+                    
+                </div>
+                
+            </section>
+    
+        </main>
+
         </div>
+        
+         
+    
+        
+
+        
+        <script>
+          const toggleBtn= document.querySelector(".toggle-button");
+          const dropdown=document.querySelector(".dropdown-menu");
+    
+          toggleBtn.addEventListener("click",()=>{
+            dropdown.classList.toggle('top-16');
+          })
+        </script>    
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+        </script>
+<!-- Footer Section -->
+<footer class="bg-green-800 text-white w-full">
+  <div class="flex flex-col md:flex-row justify-between">
+
+      <!-- Logo -->
+      <div class="mb-4 md:mb-0 ">
+          <img src="images/logo-no-background.png" alt="Your Logo" class="w-64 h-auto">
+          
+          <p class="mb-2">Phone: <a href="tel:+123456789" class="text-green-300">+1 (234) 567-89</a></p>
+      </div>
+      <div class="newsletter" x-data="{ email: '', subscribe() {
+        // Retrieve the email from Alpine.js component state
+        const email = this.email;
   
+        // Check if the email is already subscribed
+        const subscribedEmails = JSON.parse(localStorage.getItem('subscribedEmails')) || [];
+        if (subscribedEmails.includes(email)) {
+          alert('You are already subscribed!');
+          return;
+        }
+  
+        // Add the email to the list of subscribed emails
+        subscribedEmails.push(email);
+        localStorage.setItem('subscribedEmails', JSON.stringify(subscribedEmails));
+  
+        // Show a success message
+        alert('Thank you for subscribing!');
+      } }">
+      <div x-data="{ userRole: localStorage.getItem('userRole') }">
+        <div x-show="userRole !== 'admin'" >
+            <h2 class="text-yellow-700">Subscribe to Our Newsletter</h2>
+            <form @submit.prevent="subscribe">
+                <input class="text-black" type="email" x-model="email" placeholder="Enter your email" required>
+                <button class="bg-yellow-900 text-white px-4 py-2 rounded-md" type="submit">Subscribe</button>
+        </form>
+        </div>
+        
+
+
+      </div>
+
+
+
+           
+        
+        
+
+    </div>
+    
+  </div>
+
+
+      
+  
+      
+        
+      
+      <div class="mt-4 md:mt-0">
+        <h4>Follow us:</h4>
+        <ul>
+            <li><a href="https://facebook.com/yourpage" target="_blank" ><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com/" target="_blank" ></a><i class="fa-brands fa-instagram"></i></li>
+            
+          </ul>
+        
+        
+        
+    </div>
+
+      <!-- Quick Links -->
+      <div class="flex flex-col  space-y-2 md:space-y-0 md:space-x-4">
+        <h4>Quick links:</h4>
+        <ul class="flex flex-col items-center">
+            <li class="text-white hover:text-yellow-200 py-2"><a href="/">HOME</a></li>
+            
+            <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
+            <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
+            <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
+            <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
+            
+        </ul>
+          
+      </div>
+
+      
+      
 
   </div>
-  <footer class="bg-green-800 text-white w-full">
-    <div class="flex flex-col md:flex-row justify-between">
-
-        <!-- Logo -->
-        <div class="mb-4 md:mb-0 ">
-            <img src="images/logo-no-background.png" alt="Your Logo" class="w-64 h-auto">
-            
-            <p class="mb-2">Phone: <a href="tel:+123456789" class="text-green-300">+1 (234) 567-89</a></p>
-        </div>
-        <div class="newsletter" x-data="{ email: '', subscribe() {
-          // Retrieve the email from Alpine.js component state
-          const email = this.email;
-    
-          // Check if the email is already subscribed
-          const subscribedEmails = JSON.parse(localStorage.getItem('subscribedEmails')) || [];
-          if (subscribedEmails.includes(email)) {
-            alert('You are already subscribed!');
-            return;
-          }
-    
-          // Add the email to the list of subscribed emails
-          subscribedEmails.push(email);
-          localStorage.setItem('subscribedEmails', JSON.stringify(subscribedEmails));
-    
-          // Show a success message
-          alert('Thank you for subscribing!');
-        } }">
-        <div x-data="{ userRole: localStorage.getItem('userRole') }">
-          <div x-show="userRole !== 'admin'" >
-              <h2 class="text-yellow-700">Subscribe to Our Newsletter</h2>
-              <form @submit.prevent="subscribe">
-                  <input class="text-black" type="email" x-model="email" placeholder="Enter your email" required>
-                  <button class="bg-yellow-900 text-white px-4 py-2 rounded-md" type="submit">Subscribe</button>
-          </form>
-          </div>
-          
-
-
-        </div>
-
-
-
-             
-          
-          
-
-      </div>
-      
-    </div>
-
-
-        
-    
-        
-          
-        
-        <div class="mt-4 md:mt-0">
-          <h4>Follow us:</h4>
-          <ul>
-              <li><a href="https://facebook.com/yourpage" target="_blank" ><i class="fa-brands fa-facebook"></i></a></li>
-              <li><a href="https://www.instagram.com/" target="_blank" ></a><i class="fa-brands fa-instagram"></i></li>
-              
-            </ul>
-          
-          
-          
-      </div>
-
-        <!-- Quick Links -->
-        <div class="flex flex-col  space-y-2 md:space-y-0 md:space-x-4">
-          <h4>Quick links:</h4>
-          <ul class="flex flex-col items-center">
-              <li class="text-white hover:text-yellow-200 py-2"><a href="/">HOME</a></li>
-              
-              <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-department.html">ABOUT US</a></li>
-              <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
-              <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
-              <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
-              
-          </ul>
-            
-        </div>
-
-        
-        
-
-    </div>
 </footer>
 <script>
   function subscribe() {
@@ -262,26 +278,14 @@
   }
   
 </script>
- 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script type="text/javascript" src="js/store/yalanp.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
-    
-    
-    
-      
-      
-    
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script type="text/javascript" src="/js/store/yalanp.js"></script>
+  <script type="text/javascript" src="/js/app.js"></script>
         
     
         
+
     
-    
-    
-    
-    
-    
-        
-  </body>
+
+</body>
 </html>
-   
