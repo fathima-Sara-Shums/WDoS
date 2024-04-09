@@ -75,15 +75,32 @@
       <button x-show="userRole === 'admin'" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" @click="isEditorVisible = !isEditorVisible">
         <i class="fa-solid fa-pen-to-square"></i>
       </button>
-      <div class="bg-green-500" x-show="isEditorVisible"></div>
+      <div class="bg-green-500" x-show="isEditorVisible">
+        <div h4="block_two"> 
+          <div class="mb-6">
+            <label class="block text-lg font-bold mb-2">Text content</label>
+            <input x-model="$store.theanimals.main.title"  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_title" type="text" >
+            <input x-model="$store.theanimals.main.body" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_title" type="text" >
+            <input x-model="$store.theanimals.subbody.subtitle" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_title" type="text" >
+            <input x-model="$store.theanimals.subbody.linkone" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_title" type="text" >
+            <input x-model="$store.theanimals.subbody.linktwo" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_title" type="text" >
+          </div>
+          
+        <button @click=" isEditorVisible=false;saveChanges()" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save Changes</button>
+        </div>
+      </div>
+    
+
+      
+      
 
     </div>
     <div class="container mx-auto px-4 py-8">
       <div class="font-sans bg-yellow-100">
         <!-- main topic -->
-        <h1 class="text-3xl font-bold text-green-800 text-center mb-8" x-text="$store.theanimals.main.title > </h1>
+        <h1 class="text-3xl font-bold text-green-800 text-center mb-8" x-text="$store.theanimals.main.title" > </h1>
         <div>
-          <p>x-text="$store.theanimals.main.body</p>
+          <p x-text="$store.theanimals.main.body"></p>
         </div>
         
       
@@ -92,7 +109,7 @@
 
         <!--  Section containing links to both national parks-->
         <section class="mb-12">
-            <h2 class="text-2xl font-bold text-green-800 mb-4"x-text="$store.theanimals.subbody.subtitle></h2>
+            <h2 class="text-2xl font-bold text-green-800 mb-4"x-text="$store.theanimals.subbody.subtitle"></h2>
             <div>
               <ul class="list-disc list-inside" >
                   <li><a x-text="$store.theanimals.subbody.linkone" class="hover:text-green-500" href="yala.html"></a></li>
@@ -236,6 +253,27 @@
           </footer>
 
   </div>
+  <script>
+            function subscribe() {
+              // Retrieve the email from the form
+              const email = this.email;
+          
+              // Check if the email is already subscribed
+              const subscribedEmails = JSON.parse(localStorage.getItem('subscribedEmails')) || [];
+              if (subscribedEmails.includes(email)) {
+                alert('You are already subscribed!');
+                return;
+              }
+          
+              // Add the email to the list of subscribed emails
+              subscribedEmails.push(email);
+              localStorage.setItem('subscribedEmails', JSON.stringify(subscribedEmails));
+          
+              // Show a success message
+              alert('Thank you for subscribing!');
+            }
+            
+        </script>
 
     
 
