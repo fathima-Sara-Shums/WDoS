@@ -183,6 +183,57 @@
                     </div>
             </div>
             <!--Table-->
+            <div x-data="{ isEditorVisible: false, userRole: localStorage.getItem('userRole') }"  >
+                <button x-show="userRole === 'admin'" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" @click="isEditorVisible = !isEditorVisible">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+                
+                <div class="bg-green-500" x-show="isEditorVisible">
+                                    
+                
+                    <div id="_app" x-data="application">
+                    
+                    
+                        
+                        <div h4="block_one"> 
+                            <div class="mb-6">
+                                <label class="block text-lg font-bold mb-2">header one</label>
+                                <input x-model="$store.wildlifesl.table.headerone" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="table_headerone" type="text" placeholder="header_one">
+                                <label class="block text-lg font-bold mb-2">header two</label>
+                                
+                        
+                                <input x-model="$store.wildlifesl.table.headertwo" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="table_headertwo" type="text" placeholder="header_one">
+                                <label class="block text-lg font-bold mb-2">header three</label>
+                                <input x-model="$store.wildlifesl.table.headerthree" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="table_headerthree" type="text" placeholder="header_one">
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-lg font-bold mb-2">#1 details</label>
+                                <textarea x-model="$store.wildlifesl.table.animal" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="table_animal" placeholder="subtitle"></textarea>
+                                <textarea x-model="$store.wildlifesl.table.funfact" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="table_funfact" placeholder="Body"></textarea>
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-lg font-bold mb-2">#2details</label>
+                                <textarea x-model="$store.wildlifesl.table.animaltwo" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="table_animaltwo" placeholder="subtitle"></textarea>
+                                <textarea x-model="$store.wildlifesl.table.funfacttwo" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="table_funfacttwo" placeholder="Body"></textarea>
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-lg font-bold mb-2">#3 details</label>
+                                <textarea x-model="$store.wildlifesl.table.animalthree" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="table_animalthree" placeholder="subtitle"></textarea>
+                                <textarea x-model="$store.wildlifesl.table.funfactthree" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="table_funfactthree" placeholder="Body"></textarea>
+                            </div>
+                            
+                            
+                            
+                        </div>
+    
+                    
+                    </div>
+                    <!-- Save button -->
+                    <button @click=" isEditorVisible=false;saveChanges" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save Changes</button>
+        
+                    
+                </div>
+            </div>
     
             <div class="container mx-auto">
                 <div class="w-full mx-auto my-5 bg-yellow-100">
@@ -198,7 +249,7 @@
                             <!-- Row 1 -->
                             <tr class="text-sm text-gray-700 bg-white border-b">
                                 <td x-text="$store.wildlifesl.table.animal" class="p-2 border"></td>
-                                <td x-text="$store.wildlifesl.blockthree.title" class="p-2 border"></td>
+                                <td x-text="$store.wildlifesl.table.funfact" class="p-2 border"></td>
                                 <td class="p-2 border">
                                     <img x-bind:src="$store.wildlifesl.table.img" alt="Leopard" class="w-64 h-48 mx-auto">
                                 </td>
