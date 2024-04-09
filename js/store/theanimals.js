@@ -8,8 +8,8 @@ document.addEventListener('alpine:init', () => {
         },
         subbody:{
             subtitle:"EXPLORE THE TWO MOST POPULAR NATIONAL PARKS:",
-            linkone:"yala.html",
-            linktwo:"wilpattu.html",
+            linkone:"yala",
+            linktwo:"wilpattu",
 
         },
         gallery:{

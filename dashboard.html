@@ -45,9 +45,17 @@
                   <li class="text-white hover:text-yellow-200 py-2"><a href="wildlife-srilanka.html">WILDLIFE SRILANKA</a></li>
                   <li class="text-white hover:text-yellow-200 py-2"><a href="srilankan-leopard.html">SRILANKAN LEOPARD</a></li>
                   <li class="text-white hover:text-yellow-200 py-2"><a href="the-animals.html">THE ANIMALS</a></li>
-                  <div x-data="{ isEditorVisible: false, userRole: localStorage.getItem('userRole') }">
-                    <li x-show="userRole === 'admin'"class="text-white hover:text-yellow-200 py-2"><a href="dashboard.html">SUBSCRIPTIONS</a></li>
+                  <div x-data="{ isEditorVisible: false, userRole: localStorage.getItem('userRole') }" >
+                    <li x-show="userRole === 'admin'"class="text-white hover:text-yellow-200 py-2"><a href="dashboard.html">SUBCRIPTIONS</a></li>
                   </div>
+                  <div id="_app" x-data="{}">
+
+
+                    <div x-show="$store.auth.user">
+                        
+                        <button class="bg-yellow-900 text-white px-4 py-2 rounded-md" style="display: block;" x-on:click="$store.auth.logout()">Logout</button>
+                    </div>
+                </div>
                   
                   
                   

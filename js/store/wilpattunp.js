@@ -10,9 +10,9 @@ document.addEventListener('alpine:init', () => {
         },
         gallery:{
             topic:"Animals there:",
-            image:"/WDoS/images/wilpattu-monkey.jpg",
-            imagetwo:"",
-            imagethree:"",
+            image:"/WDoS/images/fishing-cat.webpjpg",
+            imagetwo:"/WDoS/images/centralhighlads.jpg",
+            imagethree:"/WDoS/images/golden-jackal-powalgarh-uttarakhand-india.webp",
 
         },
         
