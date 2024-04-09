@@ -138,7 +138,7 @@
                     <div class="bg-white md:grid md:grid-cols-4 md:gap-6 shadow overflow-hidden sm:rounded-md">
                         <div class="text-lg font-bold text-green-700 md:text-center">
                             <h4 x-text="$store.wildlifesl.block.title"></h4> 
-                            <img src="" alt="">
+                            <img x-bind:src="$store.wildlifesl.block.image" alt="hortain">
                         </div>
                         
                         <div class="prose">               
@@ -153,7 +153,7 @@
                     <div class="bg-white md:grid md:grid-cols-4 md:gap-6 shadow overflow-hidden sm:rounded-md">
                         <div class="text-lg font-bold text-green-700 md:text-center">
                             <h4 x-text="$store.wildlifesl.blocktwo.title"></h4>
-                            <img src="" alt="">
+                            <img x-bind:src="$store.wildlifesl.blocktwo.image" alt="udawalwe">
                         </div>
                         
                         <div class="prose">               
@@ -169,7 +169,7 @@
                     <div class="bg-white md:grid md:grid-cols-4 md:gap-6 shadow overflow-hidden sm:rounded-md">
                         <div class="text-lg font-bold text-green-700 md:text-center">
                             <h4 x-text="$store.wildlifesl.blockthree.title"></h4>
-                            <img src="" alt="croc">
+                            <img x-bind:src="$store.wildlifesl.blockthree.image" alt="maduru oya">
                         </div>
                         
                         <div class="prose">               
@@ -251,7 +251,7 @@
                                 <td x-text="$store.wildlifesl.table.animal" class="p-2 border"></td>
                                 <td x-text="$store.wildlifesl.table.funfact" class="p-2 border"></td>
                                 <td class="p-2 border">
-                                    <img x-bind:src="$store.wildlifesl.table.img" alt="Leopard" class="w-64 h-48 mx-auto">
+                                    <img x-bind:src="$store.wildlifesl.table.image" alt="Leopard" class="w-64 h-48 mx-auto">
                                 </td>
                             </tr>
                             <!-- Row2 -->
@@ -259,7 +259,7 @@
                                 <td x-text="$store.wildlifesl.table.animaltwo" class="p-2 border"></td>
                                 <td x-text="$store.wildlifesl.table.funfacttwo" class="p-2 border"></td>
                                 <td class="p-2 border">
-                                    <img x-bind:src="$store.wildlifesl.table.imgtwo" alt="Leopard" class="w-64 h-48 mx-auto">
+                                    <img x-bind:src="$store.wildlifesl.table.imagetwo" alt="Leopard" class="w-64 h-48 mx-auto">
                                 </td>
                             </tr>
                             <!-- Row 3 -->
@@ -267,7 +267,7 @@
                                 <td x-text="$store.wildlifesl.table.animalthree" class="p-2 border"></td>
                                 <td x-text="$store.wildlifesl.table.funfactthree" class="p-2 border"></td>
                                 <td class="p-2 border">
-                                    <img x-bind:src="$store.wildlifesl.table.imgthree" alt="Leopard" class="w-64 h-48 mx-auto">
+                                    <img x-bind:src="$store.wildlifesl.table.imagethree" alt="Leopard" class="w-64 h-48 mx-auto">
                                 </td>
                             </tr>
     
@@ -364,8 +364,29 @@
       
                 </div>
             </footer>
+            <script>
+                function subscribe() {
+                  // Retrieve the email from the form
+                  const email = this.email;
+              
+                  // Check if the email is already subscribed
+                  const subscribedEmails = JSON.parse(localStorage.getItem('subscribedEmails')) || [];
+                  if (subscribedEmails.includes(email)) {
+                    alert('You are already subscribed!');
+                    return;
+                  }
+              
+                  // Add the email to the list of subscribed emails
+                  subscribedEmails.push(email);
+                  localStorage.setItem('subscribedEmails', JSON.stringify(subscribedEmails));
+              
+                  // Show a success message
+                  alert('Thank you for subscribing!');
+                }
+                
+            </script>
         
-        <!--header navigaton-->
+    
         <script>
             const toggleBtn= document.querySelector(".toggle-button");
             const dropdown=document.querySelector(".dropdown-menu");
@@ -374,6 +395,7 @@
               dropdown.classList.toggle('top-16');
             })
         </script>  
+
 
     
         
