@@ -421,6 +421,33 @@
         
     
          <!--boost and Quick details-->
+         <div>
+            <div x-data="{ isEditorVisible: false, userRole: localStorage.getItem('userRole') }">
+                <button x-show="userRole === 'admin'" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" @click="isEditorVisible = !isEditorVisible">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+                
+                <div class="bg-green-500" x-show="isEditorVisible">
+                    <div h4="block_two"> 
+                        <div class="mb-6">
+                            <label class="block text-lg font-bold mb-2">points:</label>
+                            <input x-model="$store.home.block_five.point_one" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_four_title" type="text" placeholder="Title">
+                            
+                            <textarea x-model="$store.home.block_five.point_two"class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_four_body" placeholder="Body"></textarea>
+                            
+                        </div><textarea x-model="$store.home.block_five.point_three" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_four_body" placeholder="Body"></textarea>
+                        
+        
+                        
+                    </div>
+                    
+                    
+
+                </div>
+                <button @click="!isEditorVisible" ;class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save Changes</button>
+
+            </div>
+        </div>
     
          
         <div class=" p-8 text-2xl  bg-green-800 m-5 animate-pulse">
