@@ -90,14 +90,15 @@
             
             
             
-            <!-- About Section -->$store.wilpattunp.main.title" class="text-2xl font-bold mb-4"></h2>
+            <!-- About Section -->
                 <div class="grid md:grid-cols-2 bg-yellow-100">
+                  <h3 x-text="$store.wilpattunp.main.title" class="text-2xl font-bold mb-4"></h3>
                   <div>
-                    <p class="text-green-700"></p>
+                    <p x-text="$store.wilpattunp.main.body"  class="text-green-700"></p>
                   </div>
                   <div>
                     <!--iframe locaton-->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d505152.31178254884!2d79.7070678901881!3d8.450421309126373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afdac7787e4bc27%3A0xcdd9a0715dad187c!2sWilpattu%20National%20Park!5e0!3m2!1sen!2slk!4v1705476379038!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe x-text="$store.wilpattunp.main.map" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                   </div>
                 </div>
                 
@@ -128,7 +129,7 @@
     
             <!-- Gallery Section -->
             <section id="gallery">
-                <h2 x-text="$store.wilpattunp.gallery.topic"class="text-green-700 font-bold mb-4">Animals there:</h2>
+                <h2 x-text="$store.wilpattunp.gallery.topic"class="text-green-700 font-bold mb-4"></h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     <!-- image1 -->
                     <img src="/WDoS/images/fishing-cat.webp" alt="Wilpattu Gallery 1" class="w-full h-48 object-cover mb-2">
