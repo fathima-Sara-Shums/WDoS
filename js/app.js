@@ -44,6 +44,10 @@ document.addEventListener('alpine:init', () => {
             localStorage.removeItem('user');
             this.user = null;
             location.href = 'index.html';
+        
+        },
+        redirect(){
+            location.href ="home.html"
         },
         init(){
             let user = localStorage.getItem('user');
