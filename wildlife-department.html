@@ -79,29 +79,29 @@
           <!-- Main container -->
           
         </div>
-          <div class="container mx-auto px-4 py-8">
-            <div x-data="{ isEditorVisible: false, userRole: localStorage.getItem('userRole') }">
-              <button x-show="userRole === 'admin'" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" @click="isEditorVisible = !isEditorVisible">
-                  <i class="fa-solid fa-pen-to-square"></i>
-              </button>
-              
-              <div class="bg-green-500" x-show="isEditorVisible">
-                  <div h4="block_two"> 
-                      <div class="mb-6">
-                          <label class="block text-lg font-bold mb-2">Title</label>
-                          <input x-model="$store.wildlifedept.block.title" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_title" type="text" placeholder="Title">
-                      </div>
-                      <div class="mb-6">
-                          <label class="block text-lg font-bold mb-2">Body</label>
-                          <textarea x-model="$store.wildlifedept.block.body" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_body" placeholder="Body"></textarea>
-                      </div>
-                      <button @click=" isEditorVisible=false;saveChanges()" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save Changes</button>
-      
-                      
+        <div x-data="{ isEditorVisible: false, userRole: localStorage.getItem('userRole') }">
+          <button x-show="userRole === 'admin'" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" @click="isEditorVisible = !isEditorVisible">
+              <i class="fa-solid fa-pen-to-square"></i>
+          </button>
+          
+          <div class="bg-green-500" x-show="isEditorVisible">
+              <div h4="block_two"> 
+                  <div class="mb-6">
+                      <label class="block text-lg font-bold mb-2">Title</label>
                       <input x-model="$store.wildlifedept.block.title" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_title" type="text" placeholder="Title">
                   </div>
+                  <div class="mb-6">
+                      <label class="block text-lg font-bold mb-2">Body</label>
+                      <textarea x-model="$store.wildlifedept.block.body" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="block_body" placeholder="Body"></textarea>
+                  </div>
+                  <button @click=" isEditorVisible=false;saveChanges()" class="bg-yellow-800 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save Changes</button>
   
+                  
               </div>
+
+          </div>
+          <div class="container mx-auto  ">
+           
             <div class="bg-yellow-100">
               <!-- Introduction Section -->
               <section class="mb-12">
